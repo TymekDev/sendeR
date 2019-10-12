@@ -1,3 +1,7 @@
+v0.0.0.9001 (2019-10-12):
+	Implemented Telegram client with a primitive `send_message` and incomplete
+	docs.
+
 v0.0.0.9000 (2019-10-12):
 	Initialized package. Added a `notifieR_client` class and created a simple
 	print overload for it. Created docs and a `send_message` function drafts.

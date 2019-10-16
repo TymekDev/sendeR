@@ -33,9 +33,8 @@ client_telegram <- function(telegram_token) {
 
 client_telegram.send_message <- function(client, message, destination, ...) {
     # <ToDo: assert that destination is a chat id>
-    # <ToDo: url query escape the message>
     url <- sprintf("https://api.telegram.org/bot%s/sendMessage?text=%s&chat_id=%d",
-                   client@telegram_token, message, destination)
+                   client@telegram_token, url_escape_text(message), destination)
     
     h <- curl::new_handle()
     curl::handle_setopt(h, customrequest = "GET")

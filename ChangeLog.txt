@@ -1,3 +1,7 @@
+v0.0.1.9000 (2019-10-20):
+	Rewritten `notifieR_client` to S3. Created extendable interface for the 
+	package. Updated documentation.
+
 v0.0.0.9001 (2019-10-12):
 	Implemented Telegram client with a primitive `send_message` and incomplete
 	docs.

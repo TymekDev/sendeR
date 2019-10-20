@@ -18,7 +18,7 @@ create_client <- function(service_name, ...) {
     service <- clients_dict()[[service_name]]
     assert(!is.null(service), "could not create client:",
            "client for service", service_name, "is not implemented.",
-           "See ?clients")
+           "See ?available_clients")
     
     # <ToDo: reading from environment>
     arguments <- list(...)

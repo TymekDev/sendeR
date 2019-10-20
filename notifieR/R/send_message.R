@@ -1,18 +1,22 @@
-#' A main method for sending messages.
+#' A main method for sending messages. <ToDo>
 #' 
-#' <ToDo>
-#' 
-#' @param client <ToDo>
-#' @param message <ToDo>
-#' @param destination <ToDo>
-#' @param ...  <ToDo>
-#' 
-#' @rdname send_message
+#' <ToDo: description>
 #' 
 #' @export
-setGeneric("send_message", function(client, message, destination, ...) {
-    # <ToDo> assert is.character(client)
-    # <ToDo> create service client - eval(sprintf("new('client_%s')", client))
-    # <ToDo> check for connection, stop with warning if it is not present
-    # send_message(client, message, destination, ...)
-})
+send_message <- function(client, message, destination, verbose = FALSE, ...) {
+    if (is.character(client)) {
+        client <- create_client(service_name = client, ...)
+        return(send_message(client, message, destination, verbose, ...))
+    }
+    
+    assert(is.notifieR_client(client), "could not execute send_method:",
+           not_a_client("client", "notifieR"))
+    
+    # <ToDo: message & destination assertions>
+    response <- UseMethod("send_message")
+    if (verbose) {
+        return(response)
+    }
+    
+    response$status_code
+}

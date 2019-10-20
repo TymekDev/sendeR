@@ -1,7 +1,8 @@
 Package: notifieR
 Type: Package
 Title: <ToDo>
-Version: 0.0.0.9000
+Version: 0.1.0.9000
+Date: 2019-10-20
 Authors@R: c(
     person(given = "Tymoteusz", family = "Makowski", role = c("aut", "cre"),
            email = "makowski.tymoteusz@gmail.com"),
@@ -10,8 +11,7 @@ Authors@R: c(
 Description: <ToDo>
 License: <ToDo>
 Imports:
-    curl,
-    methods
+    curl
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1

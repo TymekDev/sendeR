@@ -2,19 +2,10 @@
 % Please edit documentation in R/send_message.R
 \name{send_message}
 \alias{send_message}
-\title{A main method for sending messages.}
+\title{A main method for sending messages. <ToDo>}
 \usage{
-send_message(client, message, destination, ...)
-}
-\arguments{
-\item{client}{<ToDo>}
-
-\item{message}{<ToDo>}
-
-\item{destination}{<ToDo>}
-
-\item{...}{<ToDo>}
+send_message(client, message, destination, verbose = FALSE, ...)
 }
 \description{
-<ToDo>
+<ToDo: description>
 }

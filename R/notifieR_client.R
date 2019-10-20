@@ -47,6 +47,10 @@ is.notifieR_client <- function(x) {
 #' 
 #' @export
 send_message.notifieR_client <- function(client, message, destination, ...) {
+    assert(is.notifieR_client(client),
+           "could not execute send_message.notifieR_client:",
+           not_a_client("client", "notifieR"))
+    
     warning("Method not implemented. See ?notifieR_client for details.")
 }
 

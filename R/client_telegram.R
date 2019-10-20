@@ -44,6 +44,9 @@ is.client_telegram <- function(x) {
 #' @export
 send_message.client_telegram <- function(client, message, destination, verbose,
                                          ...) {
+    assert(is.client_telegram(client),
+           "could not execute send_message.client_telegram method:",
+           not_a_client("client", "telegram"))
     # <ToDo: assert that destination is a chat id>
     url <- sprintf("https://api.telegram.org/bot%s/sendMessage?text=%s&chat_id=%s",
                    client$telegram_token, url_escape_text(message), destination)

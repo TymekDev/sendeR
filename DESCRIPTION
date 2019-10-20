@@ -1,7 +1,7 @@
 Package: notifieR
 Type: Package
 Title: <ToDo>
-Version: 0.0.1.9001
+Version: 0.2.1.9000
 Date: 2019-10-20
 Authors@R: c(
     person(given = "Tymoteusz", family = "Makowski", role = c("aut", "cre"),

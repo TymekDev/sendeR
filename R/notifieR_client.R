@@ -35,7 +35,8 @@ default_fields.notifieR_client <- function(client) {
 #' 
 #' @export
 is.notifieR_client <- function(x) {
-    inherits(x, "notifieR_client") && all(default_fields(x) %in% names(x))
+    inherits(x, "notifieR_client") &&
+        all(default_fields.notifieR_client(x) %in% names(x))
 }
 
 
@@ -46,7 +47,8 @@ is.notifieR_client <- function(x) {
 #' @rdname notifieR_client
 #' 
 #' @export
-send_message.notifieR_client <- function(client, message, destination, ...) {
+send_message.notifieR_client <- function(client, message, destination, verbose,
+                                         ...) {
     warning("Method not implemented. See ?notifieR_client for details.")
 }
 

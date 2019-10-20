@@ -1,4 +1,7 @@
-v0.0.1.9000 (2019-10-20):
+v0.2.0.9000 (2019-10-20):
+	Rewritten `client_telegram` to S3.
+
+v0.1.0.9000 (2019-10-20):
 	Rewritten `notifieR_client` to S3. Created extendable interface for the 
 	package. Updated documentation.
 

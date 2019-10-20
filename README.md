@@ -29,3 +29,10 @@ send_message(my_client, "Hello world!", <chat_id>)
  - Package creation infomration:
     - [Package description](http://r-pkgs.had.co.nz/description.html)
     - [roxygen2 object documentation](http://r-pkgs.had.co.nz/man.html)
+
+### How to implement a client for new service?
+New clients should be well documented and their class should be named accordingly to the convention. Following set of functionalities should be implemented:
+ 1. Function named `client_<service>` returning an object of a class of the same name. The object should be an extended `notifieR_client` and any field within the object should have the same name as arguments passed to the function.
+ 1. Method `default_fields.client_<service>` returning vector of field (constructor arguments) names.
+ 1. Function `is.client_<service>` - preferably checking if: (1) object has all required fields are present, (2) object inherits `client_<service>` and (3) object is a `notifieR_client`.
+ 1. Method `send_message.client_<service>` returning either a response's status code or whole response if verbose.

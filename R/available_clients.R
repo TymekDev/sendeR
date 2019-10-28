@@ -25,7 +25,7 @@ create_client <- function(service_name, ...) {
     defaults <- service$default_fields(NULL)
     assert(all(defaults %in% names(arguments)), "could not create a ",
            service_name, "client: insufficient arguments provided.",
-           sprintf("See ?%s_client for details.", service_name))
+           sprintf("See ?client_%s for details.", service_name))
     
     do.call(service$constructor, arguments[defaults])
 }

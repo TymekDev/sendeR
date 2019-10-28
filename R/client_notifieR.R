@@ -1,6 +1,6 @@
 #' @title notifieR client
 #' 
-#' @description Function creates an object of \code{notifieR_client} class with
+#' @description Function creates an object of \code{client_notifieR} class with
 #' given \code{service} field, typically a name of selected service. This object
 #' is an underlying structure from which every other client is created.
 #' 
@@ -8,56 +8,56 @@
 #' 
 #' @seealso \link{available_clients}, \link{custom_client}
 #' 
-#' @rdname notifieR_client
+#' @rdname client_notifieR
 #'
 #' @export
-notifieR_client <- function(service) {
+client_notifieR <- function(service) {
     assert(is.character(service), "could not create a notifieR client:",
            "provided <service> argument is not a character.")
     
     client <- list("service" = service)
-    add_class(client, "notifieR_client")
+    add_class(client, "client_notifieR")
 }
 
 
-# Function returns names of fields in object returned by notifieR_client
+# Function returns names of fields in object returned by client_notifieR
 # function. Note: field names should be the same as the constructor's arguments.
-default_fields.notifieR_client <- function(client) {
+default_fields.client_notifieR <- function(client) {
     "service"
 }
 
 
-#' @description \code{is.notifieR_client} checks if a provided object is of 
-#' the \code{notifieR_client} class and whether it has all the fields
-#' a \code{notifieR_client} should have.
+#' @description \code{is.client_notifieR} checks if a provided object is of 
+#' the \code{client_notifieR} class and whether it has all the fields
+#' a \code{client_notifieR} should have.
 #'
-#' @rdname notifieR_client
+#' @rdname client_notifieR
 #' 
 #' @export
-is.notifieR_client <- function(x) {
-    inherits(x, "notifieR_client") &&
-        all(default_fields.notifieR_client(x) %in% names(x))
+is.client_notifieR <- function(x) {
+    inherits(x, "client_notifieR") &&
+        all(default_fields.client_notifieR(x) %in% names(x))
 }
 
 
-#' @description \link{send_message} method for \code{notifieR_client} only
+#' @description \link{send_message} method for \code{client_notifieR} only
 #' serves as a placeholder. For details on how to create a custom client
 #' see \link{custom_client}.
 #' 
-#' @rdname notifieR_client
+#' @rdname client_notifieR
 #' 
 #' @export
-send_message.notifieR_client <- function(client, message, destination, verbose,
+send_message.client_notifieR <- function(client, message, destination, verbose,
                                          ...) {
-    warning("Method not implemented. See ?notifieR_client for details.")
+    warning("Method not implemented. See ?client_notifieR for details.")
 }
 
 
-#' @rdname notifieR_client
+#' @rdname client_notifieR
 #'
 #' @export
-print.notifieR_client <- function(x, ...) {
-    assert(is.notifieR_client(x), "could not print a notifieR client:",
+print.client_notifieR <- function(x, ...) {
+    assert(is.client_notifieR(x), "could not print a notifieR client:",
            not_a_client("x", "notifieR"))
     
     cat(format(x))
@@ -65,9 +65,9 @@ print.notifieR_client <- function(x, ...) {
 
 
 # Function creates a character string with relevant information about a given
-# notifieR_client. This method is intended to be used in 
-format.notifieR_client <- function(x, ...) {
-    assert(is.notifieR_client(x), "could not format a notifieR client:",
+# client_notifieR. This method is intended to be used in 
+format.client_notifieR <- function(x, ...) {
+    assert(is.client_notifieR(x), "could not format a notifieR client:",
            not_a_client("x", "notifieR"))
     
     defaults <- setdiff(default_fields(x), "service")

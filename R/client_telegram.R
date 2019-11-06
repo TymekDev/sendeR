@@ -4,7 +4,7 @@
 #' In addition to any fields in the \link{notifieR_client} this one contains
 #' \code{telegram_token} which is needed to send a message via Telegram API.
 #' 
-#' @param telegram_token <ToDo>
+#' @param telegram_token TODO
 #' 
 #' @rdname client_telegram
 #' 
@@ -37,23 +37,26 @@ is.client_telegram <- function(x) {
 }
 
 
-#' @description \link{send_message} method for \code{client_telegram}. <ToDo>
+#' @description \link{send_message} method for \code{client_telegram}. TODO
 #' 
+#' @importFrom curl new_handle handle_setopt curl_fetch_memory
+#'
 #' @rdname client_telegram
 #' 
 #' @export
-send_message.client_telegram <- function(client, message, destination, verbose,
-                                         ...) {
+send_message.client_telegram <- function(client, message, destination,
+                                         verbose = FALSE,
+                                         decode_response = TRUE, ...) {
     assert(is.client_telegram(client),
            "could not execute send_message.client_telegram method:",
            not_a_client("client", "telegram"))
-    # <ToDo: assert that destination is a chat id>
+    # TODO: assert that destination is a chat id
     url <- sprintf("https://api.telegram.org/bot%s/sendMessage?text=%s&chat_id=%s",
                    client$telegram_token, url_escape_text(message), destination)
     
-    h <- curl::new_handle()
-    curl::handle_setopt(h, customrequest = "GET")
-    response <- curl::curl_fetch_memory(url, h)
+    h <- new_handle()
+    handle_setopt(h, customrequest = "GET")
+    response <- curl_fetch_memory(url, h)
     
-    return_response(response, verbose)
+    return_response(response, verbose, decode_response)
 }

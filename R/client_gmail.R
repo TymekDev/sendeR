@@ -55,36 +55,26 @@ is.client_gmail <- function(x) {
 #' @rdname client_gmail
 #'
 #' @export
-send_message.client_gmail <- function(client, message, destination, verbose=FALSE,
-                                         ...) {
-  assert(is.client_gmail(client),
-         "could not execute send_message.client_gmail method:",
-         not_a_client("client", "gmail"))
-
+send_message.client_gmail <- function(client, message, destination, verbose = FALSE,
+                                      decode_response = TRUE, subject = "notifieR notification", ...) {
   
-  create_message <- function(message, destination, subject){
-        header <- 'Content-Type: text/plain;charset="utf-8";'
-        mime_type <- 'MIME-Version: 1.0'
-        from <- paste0('from: ', client$email)
-        to <- paste0('to: ', destination)
-        subj <- paste0('subject: ', subject)
-        msg <- paste0('\n', message)
-        
-        paste(header,mime_type,from,to,subj,msg,
-              sep = '\n')
-      }
-  msg <- create_message(message, destination, 'NotifyR notification')
-  
-  # Send message
-  response <- httr::POST(url = gmail_path(client$email),
-             client$google_token,
-             #class = 'gmail_message',
-             query = list(uploadType = 'multipart'),
-             body = jsonlite::toJSON(auto_unbox=TRUE, 
-                                     null = "null",
-                                     c(threadId = NULL, list(raw = base64url_encode(as.character(msg))))),
-             httr::add_headers("Content-Type" = "application/json")
-  )
-  
-  return_response(response, verbose)
+    assert(is.client_gmail(client),
+           "could not execute send_message.client_gmail method:",
+           not_a_client("client", "gmail"))
+    
+    post_url <- sprintf("https://www.googleapis.com/gmail/v1/users/%s/messages/send", client$email)
+    msg_body <- create_mime_message(client$email, destination, subject, message)
+    
+    headers <- c("Content-Type" = "application/json",
+                 "Authorization" = sprintf("Bearer %s", client$google_token$credentials$access_token))
+    options <- encode_body(msg_body)
+    
+    h <- curl::new_handle()
+    curl::handle_setopt(h, .list = options)
+    curl::handle_setheaders(h, .list = headers)
+    on.exit(curl::handle_reset(h))
+    
+    resp <- curl::curl_fetch_memory(post_url, h)
+    
+    return_response(resp, verbose, decode_response)
 }

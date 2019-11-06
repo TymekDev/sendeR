@@ -11,7 +11,8 @@ notifieR_client(service)
 
 is.notifieR_client(x)
 
-\method{send_message}{notifieR_client}(client, message, destination, ...)
+\method{send_message}{notifieR_client}(client, message, destination,
+  verbose = FALSE, decode_response = TRUE, ...)
 
 \method{print}{notifieR_client}(x, ...)
 }

@@ -12,6 +12,7 @@ Description: <ToDo>
 License: <ToDo>
 Imports:
     curl,
+    httr,
     openssl
 Encoding: UTF-8
 LazyData: true

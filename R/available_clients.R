@@ -1,6 +1,6 @@
 #' @title Available clients
 #' 
-#' @description <ToDo>
+#' @description TODO
 #' 
 #' @seealso \link{custom_client}
 #' 
@@ -8,7 +8,7 @@
 #' 
 #' @export
 available_clients <- function() {
-    names(clients_dict()) # <ToDo>
+    names(clients_dict())
 }
 
 
@@ -20,7 +20,7 @@ create_client <- function(service_name, ...) {
            "client for service", service_name, "is not implemented.",
            "See ?available_clients")
     
-    # <ToDo: reading from environment>
+    # TODO: reading from environment
     arguments <- list(...)
     defaults <- service$default_fields(NULL)
     assert(all(defaults %in% names(arguments)), "could not create a ", service_name,
@@ -37,7 +37,9 @@ clients_dict <- function() {
     list(
         "notifieR" = list(
             "constructor" = notifieR_client,
-            "default_fields" = default_fields.notifieR_client
-        )
+            "default_fields" = default_fields.notifieR_client),
+        "gmail" = list(
+            "constructor" = client_gmail,
+            "default_fields" = default_fields.client_gmail)
     )
 }

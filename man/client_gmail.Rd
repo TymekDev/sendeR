@@ -11,19 +11,37 @@ client_gmail(email, key, secret)
 is.client_gmail(x)
 
 \method{send_message}{client_gmail}(client, message, destination,
-  verbose = FALSE, ...)
+  verbose = FALSE, decode_response = TRUE,
+  subject = "notifieR notification", ...)
 }
 \arguments{
-\item{email, }{key, secret}
+\item{email}{TODO}
+
+\item{key}{TODO}
+
+\item{secret}{TODO}
+
+\item{client}{TODO}
+
+\item{message}{TODO}
+
+\item{destination}{TODO}
+
+\item{verbose}{TODO}
+
+\item{decode_response}{TODO}
+
+\item{subject}{TODO}
 }
 \description{
 Client extending a \link{notifieR_client} for Gmail service.
 In addition to any fields in the \link{notifieR_client} this one contains
-\code{email},\code{key},\code{secret} which is needed to send a message via Gmail Send API.
+\code{email},\code{key},\code{secret} which is needed to send a message via
+Gmail Send API.
 
 \code{is.client_gmail} checks if a provided object is of
 the \code{client_gmail} class, whether it has all the fields
 a \code{client_gmail} should have and if it is a \link{notifieR_client}.
 
-\link{send_message} method for \code{client_gmail}. <ToDo>
+\link{send_message} method for \code{client_gmail}. TODO
 }

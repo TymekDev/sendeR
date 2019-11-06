@@ -7,7 +7,7 @@
 available_clients()
 }
 \description{
-<ToDo>
+TODO
 }
 \seealso{
 \link{custom_client}

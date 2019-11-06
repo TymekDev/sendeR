@@ -1,25 +1,3 @@
-# Function adds a new class to a given object.
-add_class <- function(object, new_class, as_first = TRUE) {
-    if (as_first) {
-        classes_new <- c(new_class, class(object))
-    } else {
-        classes_new <- c(class(object), new_class)
-    }
-    
-    class(object) <- classes_new
-    object
-}
-
-
-# A stop wrapper which stops only if a condition is not met and displays
-# provided message.
-assert <- function(condition, ...) {
-    if (!condition) {
-        stop(paste(...), call. = FALSE)
-    }
-}
-
-
 # Function creates a simple MIME text message.
 create_mime_message <- function(from, to, subject, message){
     paste(
@@ -33,15 +11,10 @@ create_mime_message <- function(from, to, subject, message){
 }
 
 
-# Generic method for internal default_fields methods.
-default_fields <- function(client) {
-    UseMethod("default_fields")
-}
-
-
 # Function encodes text message for POST request body.
+#' @importFrom openssl base64_encode
 encode_body <- function(msg) {
-    text_enc <- openssl::base64_encode(as.character(msg))
+    text_enc <- base64_encode(as.character(msg)) 
     text_enc_url <- sub("=+$", "", chartr("+/", "-_", text_enc))
     body_enc <- sprintf('{"raw": "%s"}', text_enc_url)
     
@@ -50,35 +23,6 @@ encode_body <- function(msg) {
         post = TRUE,
         postfieldsize = length(body_raw),
         postfields = body_raw)
-}
-
-
-# Function creates a string representation of names and values of given fields
-# within provided client.
-format_fields <- function(client, field_names) {
-    paste(
-        sapply(field_names, function(f)
-            tryCatch(sprintf(" - %s: %s", f, client[[f]]),
-                     error = function(e) sprintf(" - %s: <could not print>", f))),
-            collapse = "\n"
-        )
-}
-
-
-# Function for creating standard error thrown during the notifieR_client type
-# assertion.
-not_a_client <- function(argument_name, service_name) {
-    sprintf("provided <%s> argument is either incomplete or not a %s client.",
-            argument_name, service_name)
-}
-
-
-# Wraper for curl response return.
-return_response <- function(response, verbose) {
-    if (verbose) {
-        return(response)
-    }
-    response$status_code
 }
 
 

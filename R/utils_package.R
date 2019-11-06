@@ -37,7 +37,7 @@ format_fields <- function(client, field_names) {
 }
 
 
-# Function for creating standard error thrown during the notifieR_client type
+# Function for creating standard error thrown during the client_notifieR type
 # assertion.
 not_a_client <- function(argument_name, service_name) {
     sprintf("provided <%s> argument is either incomplete or not a %s client.",

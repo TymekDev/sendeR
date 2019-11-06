@@ -1,5 +1,7 @@
 # notifieR
 
+TODO: update the README.
+
 ## Usage
 It is possible to send a message with a one-liner command as shown in the example below.
 ```{r}

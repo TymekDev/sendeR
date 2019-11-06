@@ -1,15 +1,15 @@
 Package: notifieR
 Type: Package
-Title: <ToDo>
-Version: 0.1.2.9000
+Title: TODO
+Version: 0.3.0.9000
 Date: 2019-10-20
 Authors@R: c(
     person(given = "Tymoteusz", family = "Makowski", role = c("aut", "cre"),
            email = "makowski.tymoteusz@gmail.com"),
     person(given = "Tomasz", family = "Klonecki", role = c("aut"),
            email = "tomaszklonecki@gmail.com"))
-Description: <ToDo>
-License: <ToDo>
+Description: TODO
+License: TODO
 Imports:
     curl,
     httr,

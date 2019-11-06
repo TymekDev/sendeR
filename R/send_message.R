@@ -17,7 +17,7 @@ send_message <- function(client, message, destination, verbose = FALSE,
                             decode_response, ...))
     }
     
-    assert(is.notifieR_client(client), "could not execute send_method:",
+    assert(is.client_notifieR(client), "could not execute send_method:",
            not_a_client("client", "notifieR"))
     
     # TODO: message & destination assertions

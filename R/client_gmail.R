@@ -1,7 +1,7 @@
 #' @title Gmail client
 #'
-#' @description Client extending a \link{notifieR_client} for Gmail service.
-#' In addition to any fields in the \link{notifieR_client} this one contains
+#' @description Client extending a \link{client_notifieR} for Gmail service.
+#' In addition to any fields in the \link{client_notifieR} this one contains
 #' \code{email},\code{key},\code{secret} which is needed to send a message via
 #' Gmail Send API.
 #'
@@ -24,7 +24,7 @@ client_gmail <- function(email, key, secret) {
                                    gmail_send_app,
                                    scope = scope_list)
     
-    client <- notifieR_client("gmail")
+    client <- client_notifieR("gmail")
     client$email <- email
     client$key <- key
     client$secret <- secret
@@ -42,13 +42,13 @@ default_fields.client_gmail <- function(client) {
 
 #' @description \code{is.client_gmail} checks if a provided object is of
 #' the \code{client_gmail} class, whether it has all the fields
-#' a \code{client_gmail} should have and if it is a \link{notifieR_client}.
+#' a \code{client_gmail} should have and if it is a \link{client_notifieR}.
 #'
 #' @rdname client_gmail
 #'
 #' @export
 is.client_gmail <- function(x) {
-    is.notifieR_client(x) &&
+    is.client_notifieR(x) &&
         inherits(x, "client_gmail") &&
         all(default_fields.client_gmail(x) %in% names(x))
 }

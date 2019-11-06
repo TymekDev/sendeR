@@ -15,7 +15,7 @@ available_clients <- function() {
 # Generalized constructor. Creates a client based on a service's name and
 # arguments passed in an ellipsis.
 create_client <- function(service_name, ...) {
-    service <- clients_dict()[[service_name]]
+    service <- clients_dict()[[tolower(service_name)]]
     assert(!is.null(service), "could not create client:",
            "client for service", service_name, "is not implemented.",
            "See ?available_clients")
@@ -23,9 +23,9 @@ create_client <- function(service_name, ...) {
     # TODO: reading from environment
     arguments <- list(...)
     defaults <- service$default_fields(NULL)
-    assert(all(defaults %in% names(arguments)), "could not create a ", service_name,
-           "client: insufficient arguments provided.",
-           sprintf("See ?%s_client for details.", service_name))
+    assert(all(defaults %in% names(arguments)), "could not create a ",
+           service_name, "client: insufficient arguments provided.",
+           sprintf("See ?client_%s for details.", service_name))
     
     do.call(service$constructor, arguments[defaults])
 }
@@ -35,11 +35,14 @@ create_client <- function(service_name, ...) {
 # constructor.
 clients_dict <- function() {
     list(
-        "notifieR" = list(
-            "constructor" = notifieR_client,
-            "default_fields" = default_fields.notifieR_client),
+        "notifier" = list(
+            "constructor" = client_notifieR,
+            "default_fields" = default_fields.client_notifieR),
         "gmail" = list(
             "constructor" = client_gmail,
-            "default_fields" = default_fields.client_gmail)
+            "default_fields" = default_fields.client_gmail),
+        "telegram" = list(
+            "constructor" = client_telegram,
+            "default_fields" = default_fields.client_telegram)
     )
 }

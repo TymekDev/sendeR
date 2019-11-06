@@ -11,7 +11,8 @@ notifieR_client(service)
 
 is.notifieR_client(x)
 
-\method{send_message}{notifieR_client}(client, message, destination, ...)
+\method{send_message}{notifieR_client}(client, message, destination,
+  verbose = FALSE, decode_response = TRUE, ...)
 
 \method{print}{notifieR_client}(x, ...)
 }
@@ -32,5 +33,5 @@ serves as a placeholder. For details on how to create a custom client
 see \link{custom_client}.
 }
 \seealso{
-\link{available_clients} \link{custom_client}
+\link{available_clients}, \link{custom_client}
 }

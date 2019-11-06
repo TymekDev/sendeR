@@ -1,22 +1,25 @@
-#' A main method for sending messages. <ToDo>
+#' @title A main method for sending messages. TODO
 #' 
-#' <ToDo: description>
+#' @description TODO
+#' 
+#' @param client TODO
+#' @param message TODO
+#' @param destination TODO
+#' @param verbose TODO
+#' @param decode_response TODO
 #' 
 #' @export
-send_message <- function(client, message, destination, verbose = FALSE, ...) {
+send_message <- function(client, message, destination, verbose = FALSE,
+                         decode_response = TRUE, ...) {
     if (is.character(client)) {
         client <- create_client(service_name = client, ...)
-        return(send_message(client, message, destination, verbose, ...))
+        return(send_message(client, message, destination, verbose,
+                            decode_response, ...))
     }
     
     assert(is.notifieR_client(client), "could not execute send_method:",
            not_a_client("client", "notifieR"))
     
-    # <ToDo: message & destination assertions>
-    response <- UseMethod("send_message")
-    if (verbose) {
-        return(response)
-    }
-    
-    response$status_code
+    # TODO: message & destination assertions
+    UseMethod("send_message")
 }

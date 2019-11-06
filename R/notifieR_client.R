@@ -35,7 +35,8 @@ default_fields.notifieR_client <- function(client) {
 #' 
 #' @export
 is.notifieR_client <- function(x) {
-    inherits(x, "notifieR_client") && all(default_fields(x) %in% names(x))
+    inherits(x, "notifieR_client") &&
+        all(default_fields(x) %in% names(x))
 }
 
 
@@ -46,7 +47,9 @@ is.notifieR_client <- function(x) {
 #' @rdname notifieR_client
 #' 
 #' @export
-send_message.notifieR_client <- function(client, message, destination, ...) {
+send_message.notifieR_client <- function(client, message, destination,
+                                         verbose = FALSE,
+                                         decode_response = TRUE, ...) {
     assert(is.notifieR_client(client),
            "could not execute send_message.notifieR_client:",
            not_a_client("client", "notifieR"))
@@ -79,7 +82,7 @@ format.notifieR_client <- function(x, ...) {
     
     additionals <- setdiff(names(x), c(default_fields(x), "service"))
     if (length(additionals) > 0) {
-        additionals <- sprintf("\n\nAdditional fields:\n%s",
+        additionals <- sprintf("\n\nAdditional fields:\n%s\n",
                                format_fields(x, additionals))
     }
     

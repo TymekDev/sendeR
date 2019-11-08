@@ -5,9 +5,9 @@
 #' \code{email},\code{key},\code{secret} which is needed to send a message via
 #' Gmail Send API.
 #'
-#' @param email TODO
-#' @param key TODO
-#' @param secret TODO
+#' @param email Email of reciver of the message.
+#' @param key \code{Key} created in Google API application.
+#' @param secret \code{Secret Key} created in Google API application
 #'
 #' @importFrom httr oauth_app oauth2.0_token oauth_endpoints
 #' 
@@ -57,7 +57,7 @@ is.client_gmail <- function(x) {
 #' @description \link{send_message} method for \code{client_gmail}. TODO
 #'
 #' @inheritParams send_message
-#' @param subject TODO
+#' @param subject Subject of email message.
 #' 
 #' @importFrom curl new_handle handle_setopt handle_setheaders handle_reset curl_fetch_memory
 #'

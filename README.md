@@ -1,4 +1,7 @@
 # notifieR
+<!-- badges: start -->
+  [![Travis build status](https://travis-ci.com/tmakowski/notifieR.svg?token=8VGPqiksfsHBtQHPsi4w&branch=master)](https://travis-ci.com/tmakowski/notifieR)
+<!-- badges: end -->
 
 TODO: update the README.
 

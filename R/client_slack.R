@@ -38,8 +38,7 @@ is.client_slack <- function(x) {
 }
 
 
-#' @importFrom curl curl_escape
-#' @importFrom httr POST add_headers
+#' @importFrom curl curl_escape new_handle handle_setheaders handle_setopt curl_fetch_memory handle_reset
 #'
 #' @rdname send_message
 #' @export
@@ -50,22 +49,25 @@ send_message.client_slack <- function(client, message, destination = NULL,
            "could not execute send_message.client_slack method:",
            not_a_client("client", "slack"))
   
-    icon_emoji <- sprintf(', "icon_emoji": "%s"', icon_emoji) # TODO(TK): initial value
+    channel <- if (is.null(destination)) "#general" else destination # TODO(TK): Picking a channel (destination)
     username <- "notifieR"
-    output <- curl_escape(message)
-  
-    # TODO(TK): Picking a channel (destination)
-    channel <- if (is.null(destination)) "#general" else destination
-  
-    response <- POST(
-        url = client$slack_webhook,
-        encode = "form",
-        add_headers(
-            `Content-Type` = "application/x-www-form-urlencoded",
-            Accept = "*/*"),
-        body = curl_escape(
-          sprintf('payload={"channel": "%s", "username": "%s", "text": "```%s```"%s}',
-                  channel, username, output, icon_emoji)))
+    # TODO(TK): initial value:
+    # icon_emoji <- sprintf(', "icon_emoji": "%s"', icon_emoji)
+    icon_emoji <- ""
+
+    headers <- list("Content-Type" = "application/json")
+    options <- list(
+      "post" = TRUE,
+      "postfields" = sprintf(
+        '{"channel": "%s", "username": "%s", "text": "```%s```"%s}',
+        channel, username, curl_escape(message), icon_emoji))
+
+    h <- new_handle()
+    handle_setheaders(h, .list = headers)
+    handle_setopt(h, .list = options)
+    on.exit(handle_reset(h))
+
+    response <- curl_fetch_memory(client$slack_webhook, h)
 
     return_response(response, verbose, decode_response)
 }

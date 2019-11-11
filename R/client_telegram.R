@@ -37,7 +37,7 @@ is.client_telegram <- function(x) {
 }
 
 
-#' @importFrom curl curl_escape new_handle handle_setopt curl_fetch_memory
+#' @importFrom curl curl_escape new_handle handle_setopt curl_fetch_memory handle_reset
 #'
 #' @rdname send_message
 #' @export
@@ -54,6 +54,7 @@ send_message.client_telegram <- function(client, message, destination,
     h <- new_handle()
     handle_setopt(h, customrequest = "GET")
     response <- curl_fetch_memory(url, h)
+    on.exit(handle_reset(h))
     
     return_response(response, verbose, decode_response)
 }

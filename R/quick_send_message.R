@@ -1,8 +1,8 @@
-# TODO(TM):
+# TODO(Feature):
 quick_send_message <- function(client, message, destination, verbose = FALSE,
                                ...) {
     assert(is.character(client) || is.client_notifieR(client),
-           "only character and notifieR client's are supported") # TODO(TM)
+           "only character and notifieR client's are supported") # TODO: update assert
 
     if (is.character(client)) {
         client <- create_client(service_name = client, ...)
@@ -18,7 +18,7 @@ create_client <- function(service_name, ...) {
     service <- clients_dict()[[tolower(service_name)]]
     assert(!is.null(service), "could not create client:",
            "client for service", service_name, "is not implemented.",
-           "See ?available_clients") # TODO(TM): update assert
+           "See ?available_clients") # TODO: update assert
 
     # TODO(Feature): reading arguments from a system environment.
     arguments <- list(...)

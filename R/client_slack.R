@@ -13,25 +13,25 @@
 #' 
 #' @export
 client_slack <- function(slack_webhook) {
-  client <- client_notifieR("slack")
-  client$slack_webhook <- slack_webhook
+    client <- client_notifieR("slack")
+    client$slack_webhook <- slack_webhook
   
-  add_class(client, "client_slack")
+    add_class(client, "client_slack")
 }
 
 
 # Function returns names of fields in client_slack object.
 default_fields.client_slack <- function(client) {
-  "slack_webhook"   
+    "slack_webhook"
 }
 
 
 #' @rdname is.client_notifieR
 #' @export
 is.client_slack <- function(x) {
-  is.client_notifieR(x) &&
-    inherits(x, "client_slack") &&
-    all(default_fields.client_slack(x) %in% names(x))   
+    is.client_notifieR(x) &&
+      inherits(x, "client_slack") &&
+      all(default_fields.client_slack(x) %in% names(x))
 }
 
 
@@ -45,24 +45,29 @@ is.client_slack <- function(x) {
 #' @rdname client_slack
 #' 
 #' @export
-send_message.client_slack <- function(client, message, destination = NA,
-                                         verbose = FALSE,
-                                         decode_response = TRUE, ...) {
-  assert(is.client_slack(client),
-         "could not execute send_message.client_slack method:",
-         not_a_client("client", "slack"))
+send_message.client_slack <- function(client, message, destination = NULL,
+                                      verbose = FALSE, decode_response = TRUE,
+                                      ...) {
+    assert(is.client_slack(client),
+           "could not execute send_message.client_slack method:",
+           not_a_client("client", "slack"))
   
-  icon_emoji <- sprintf(', "icon_emoji": "%s"', icon_emoji)
-  username <- 'notifyr'
-  output <- curl_escape(message)
+    icon_emoji <- sprintf(', "icon_emoji": "%s"', icon_emoji) # TODO(TK): initial value
+    username <- "notifieR"
+    output <- curl_escape(message)
   
-  # TODO Picking a channel (destination)
-  channel <- ifelse(is.na(destination),'#general',destination)
+    # TODO(TK): Picking a channel (destination)
+    channel <- if (is.null(destination)) "#general" else destination
   
-  response <- POST(url = client$slack_webhook, 
-       encode = "form",
-       add_headers(`Content-Type` = "application/x-www-form-urlencoded",
-                   Accept = "*/*"), body = curl_escape(sprintf("payload={\"channel\": \"%s\", \"username\": \"%s\", \"text\": \"```%s```\"%s}",
-                                                             channel, username, output, icon_emoji)))
-  return_response(response, verbose, decode_response)
+    response <- POST(
+        url = client$slack_webhook,
+        encode = "form",
+        add_headers(
+            `Content-Type` = "application/x-www-form-urlencoded",
+            Accept = "*/*"),
+        body = curl_escape(
+          sprintf('payload={"channel": "%s", "username": "%s", "text": "```%s```"%s}',
+                  channel, username, output, icon_emoji)))
+
+    return_response(response, verbose, decode_response)
 }

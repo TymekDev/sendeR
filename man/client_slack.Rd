@@ -7,7 +7,7 @@
 \usage{
 client_slack(slack_webhook)
 
-\method{send_message}{client_slack}(client, message, destination = NA,
+\method{send_message}{client_slack}(client, message, destination = NULL,
   verbose = FALSE, decode_response = TRUE, ...)
 }
 \arguments{

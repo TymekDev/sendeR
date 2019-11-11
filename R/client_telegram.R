@@ -1,13 +1,18 @@
 #' @title Telegram client
 #' 
-#' @description Client extending a \link{client_notifieR} for Telegram service.
-#' In addition to any fields in the \link{client_notifieR} this one contains
-#' \code{telegram_token} which is needed to send a message via Telegram API.
+#' @description Client extending a \link{client_notifieR} for the Telegram
+#' service. In addition to any fields in the \link{client_notifieR} this one
+#' contains \code{telegram_token} which is needed to send a message via
+#' the Telegram Bot API. For additional information on how to get required
+#' \code{telegram_token} see details.
 #' 
-#' @param telegram_token TODO
+#' @details TOOD(TM): how to get telegram_token
+#' 
+#' @param telegram_token TODO(TM)
+#' 
+#' @seealso \link{available_clients}, \link{send_message}, \link{is.client_telegram}
 #' 
 #' @rdname client_telegram
-#' 
 #' @export
 client_telegram <- function(telegram_token) {
     client <- client_notifieR("telegram")
@@ -17,7 +22,7 @@ client_telegram <- function(telegram_token) {
 }
 
 
-# Function returns names of fields in client_telegram object.
+# Function returns field names in the client_telegram object.
 default_fields.client_telegram <- function(client) {
     "telegram_token"   
 }
@@ -32,14 +37,9 @@ is.client_telegram <- function(x) {
 }
 
 
-#' @description \link{send_message} method for \code{client_telegram}. TODO
-#'
-#' @inheritParams send_message
-#' 
 #' @importFrom curl curl_escape new_handle handle_setopt curl_fetch_memory
 #'
-#' @rdname client_telegram
-#' 
+#' @rdname send_message
 #' @export
 send_message.client_telegram <- function(client, message, destination,
                                          verbose = FALSE,

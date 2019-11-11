@@ -9,6 +9,3 @@ available_clients()
 \description{
 TODO
 }
-\seealso{
-\link{custom_client}
-}

@@ -1,18 +1,22 @@
 #' @title Gmail client
 #'
-#' @description Client extending a \link{client_notifieR} for Gmail service.
-#' In addition to any fields in the \link{client_notifieR} this one contains
-#' \code{email},\code{key},\code{secret} which is needed to send a message via
-#' Gmail Send API.
+#' @description Client extending the \link{client_notifieR} for the Gmail
+#' service. In addition to any fields in the \link{client_notifieR} this one
+#' contains an \code{email}, a \code{key} and a \code{secret} fields which are
+#' needed to send a message via the Gmail Send API. For additional information
+#' on how to get required credentials see details.
 #'
-#' @param email Email of reciver of the message.
-#' @param key \code{Key} created in Google API application.
-#' @param secret \code{Secret Key} created in Google API application
+#' @details TODO(TK): how to get credentials.
+#'
+#' @param email an email of a recipient of the message.
+#' @param key a key created in a Google API application.
+#' @param secret a secret key created in a Google API application.
+#'
+#' @seealso \link{available_clients}, \link{send_message}, \link{is.client_gmail}
 #'
 #' @importFrom httr oauth_app oauth2.0_token oauth_endpoints
 #' 
 #' @rdname client_gmail
-#'
 #' @export
 client_gmail <- function(email, key, secret) {
     scope_list <- c("https://www.googleapis.com/auth/gmail.send")
@@ -34,7 +38,7 @@ client_gmail <- function(email, key, secret) {
 }
 
 
-# Function returns names of fields in client_gmail object.
+# Function returns field names in the client_gmail object.
 default_fields.client_gmail <- function(client) {
     c("email", "key", "secret")
 }
@@ -49,15 +53,11 @@ is.client_gmail <- function(x) {
 }
 
 
-#' @description \link{send_message} method for \code{client_gmail}. TODO
-#'
-#' @inheritParams send_message
-#' @param subject Subject of email message.
+#' @param subject a subject of an email message.
 #' 
 #' @importFrom curl new_handle handle_setopt handle_setheaders handle_reset curl_fetch_memory
 #'
-#' @rdname client_gmail
-#'
+#' @rdname send_message
 #' @export
 send_message.client_gmail <- function(client, message, destination,
                                       verbose = FALSE, decode_response = TRUE,

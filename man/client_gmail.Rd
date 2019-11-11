@@ -2,39 +2,27 @@
 % Please edit documentation in R/client_gmail.R
 \name{client_gmail}
 \alias{client_gmail}
-\alias{send_message.client_gmail}
 \title{Gmail client}
 \usage{
 client_gmail(email, key, secret)
-
-\method{send_message}{client_gmail}(client, message, destination,
-  verbose = FALSE, decode_response = TRUE,
-  subject = "notifieR notification", ...)
 }
 \arguments{
-\item{email}{Email of reciver of the message.}
+\item{email}{an email of a recipient of the message.}
 
-\item{key}{\code{Key} created in Google API application.}
+\item{key}{a key created in a Google API application.}
 
-\item{secret}{\code{Secret Key} created in Google API application}
-
-\item{client}{TODO}
-
-\item{message}{TODO}
-
-\item{destination}{TODO}
-
-\item{verbose}{TODO}
-
-\item{decode_response}{TODO}
-
-\item{subject}{Subject of email message.}
+\item{secret}{a secret key created in a Google API application.}
 }
 \description{
-Client extending a \link{client_notifieR} for Gmail service.
-In addition to any fields in the \link{client_notifieR} this one contains
-\code{email},\code{key},\code{secret} which is needed to send a message via
-Gmail Send API.
-
-\link{send_message} method for \code{client_gmail}. TODO
+Client extending the \link{client_notifieR} for the Gmail
+service. In addition to any fields in the \link{client_notifieR} this one
+contains an \code{email}, a \code{key} and a \code{secret} fields which are
+needed to send a message via the Gmail Send API. For additional information
+on how to get required credentials see details.
+}
+\details{
+TODO(TK): how to get credentials.
+}
+\seealso{
+\link{available_clients}, \link{send_message}, \link{is.client_gmail}
 }

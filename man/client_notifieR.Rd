@@ -2,41 +2,25 @@
 % Please edit documentation in R/client_notifieR.R
 \name{client_notifieR}
 \alias{client_notifieR}
-\alias{send_message.client_notifieR}
 \alias{print.client_notifieR}
 \title{notifieR client}
 \usage{
 client_notifieR(service)
 
-\method{send_message}{client_notifieR}(client, message, destination,
-  verbose = FALSE, decode_response = TRUE, ...)
-
 \method{print}{client_notifieR}(x, ...)
 }
 \arguments{
-\item{service}{a name of a client's serivce.}
-
-\item{client}{TODO}
-
-\item{message}{TODO}
-
-\item{destination}{TODO}
-
-\item{verbose}{TODO}
-
-\item{decode_response}{TODO}
+\item{service}{typically a name of service whose client extends the object.}
 
 \item{x}{an object to print.}
+
+\item{...}{argument not used. Required only for overloading purposes.}
 }
 \description{
-Function creates an object of \code{client_notifieR} class with
-given \code{service} field, typically a name of selected service. This object
-is an underlying structure from which every other client is created.
-
-\link{send_message} method for \code{client_notifieR} only
-serves as a placeholder. For details on how to create a custom client
-see \link{custom_client}.
+Function \code{client_notifieR} is a constructor for an object
+of a \code{client_notifieR} class. This object is an underlying structure
+on which every other client is based.
 }
 \seealso{
-\link{available_clients}, \link{custom_client}
+\link{available_clients}, \link{send_message}, \link{is.client_notifieR}
 }

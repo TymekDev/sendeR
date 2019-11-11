@@ -2,34 +2,24 @@
 % Please edit documentation in R/client_slack.R
 \name{client_slack}
 \alias{client_slack}
-\alias{send_message.client_slack}
 \title{Slack client}
 \usage{
 client_slack(slack_webhook)
-
-\method{send_message}{client_slack}(client, message, destination = NULL,
-  verbose = FALSE, decode_response = TRUE, ...)
 }
 \arguments{
-\item{slack_webhook}{Webhook obtained from Slack API settings}
-
-\item{client}{TODO}
-
-\item{message}{TODO}
-
-\item{destination}{TODO}
-
-\item{verbose}{TODO}
-
-\item{decode_response}{TODO}
+\item{slack_webhook}{a webhook obtained from the Slack API settings.}
 }
 \description{
-Client extending a \link{client_notifieR} for Slack service.
-In addition to any fields in the \link{client_notifieR} this one contains
-\code{slack webhook} which is needed to send a message via Slack Webhook API.
-
-Just go to: \code{https://api.slack.com/messaging/webhooks} and create Your own webhook to send messages.
-Webhooks are permamently connected to one channel!
-
-\link{send_message} method for \code{client_slack}. TODO
+Client extending the \link{client_notifieR} for the Slack
+service. In addition to any fields in the \link{client_notifieR} this one
+contains \code{slack_webhook} which is needed to send a message via the Slack
+Webhook API. For additional information on how to create a webhook see details.
+}
+\details{
+To create your own webhook head to
+\url{https://api.slack.com/messaging/webhooks}.
+\strong{Note}: Webhooks are permamently connected to one channel.
+}
+\seealso{
+\link{available_clients}, \link{send_message}, \link{is.client_slack}
 }

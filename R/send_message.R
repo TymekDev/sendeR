@@ -1,4 +1,4 @@
-#' @title A main method for sending messages. TODO
+#' @title Methods for sending messages.
 #' 
 #' @description TODO
 #' 
@@ -7,6 +7,7 @@
 #' @param destination TODO
 #' @param verbose TODO
 #' @param decode_response TODO
+#' @param ... TODO
 #' 
 #' @export
 send_message <- function(client, message, destination, verbose = FALSE,

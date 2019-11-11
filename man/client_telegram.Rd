@@ -2,31 +2,23 @@
 % Please edit documentation in R/client_telegram.R
 \name{client_telegram}
 \alias{client_telegram}
-\alias{send_message.client_telegram}
 \title{Telegram client}
 \usage{
 client_telegram(telegram_token)
-
-\method{send_message}{client_telegram}(client, message, destination,
-  verbose = FALSE, decode_response = TRUE, ...)
 }
 \arguments{
-\item{telegram_token}{TODO}
-
-\item{client}{TODO}
-
-\item{message}{TODO}
-
-\item{destination}{TODO}
-
-\item{verbose}{TODO}
-
-\item{decode_response}{TODO}
+\item{telegram_token}{TODO(TM)}
 }
 \description{
-Client extending a \link{client_notifieR} for Telegram service.
-In addition to any fields in the \link{client_notifieR} this one contains
-\code{telegram_token} which is needed to send a message via Telegram API.
-
-\link{send_message} method for \code{client_telegram}. TODO
+Client extending a \link{client_notifieR} for the Telegram
+service. In addition to any fields in the \link{client_notifieR} this one
+contains \code{telegram_token} which is needed to send a message via
+the Telegram Bot API. For additional information on how to get required
+\code{telegram_token} see details.
+}
+\details{
+TOOD(TM): how to get telegram_token
+}
+\seealso{
+\link{available_clients}, \link{send_message}, \link{is.client_telegram}
 }

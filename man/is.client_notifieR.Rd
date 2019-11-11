@@ -17,14 +17,14 @@ is.client_slack(x)
 is.client_telegram(x)
 }
 \arguments{
-\item{x}{object to be tested.}
+\item{x}{an object to be tested.}
 }
 \description{
-\code{is.client_notifieR} checks if a provided object is of 
+\code{is.client_notifieR} tests if a provided object is of
 the \code{client_notifieR} class and whether it has all the fields
 a \code{client_notifieR} should have.
 
 All other functions check if the provided object extends
-\code{client_notifieR} and whether it has all the fields a given client
-should have.
+\code{client_notifieR} (passes \code{is.client_notifieR} test) and whether it
+has all the fields a given client should have.
 }

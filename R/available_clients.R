@@ -2,8 +2,6 @@
 #' 
 #' @description TODO
 #' 
-#' @seealso \link{custom_client}
-#' 
 #' @rdname available_clients
 #' 
 #' @export

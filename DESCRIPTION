@@ -11,7 +11,8 @@ Authors@R: c(
 Description: TODO(TM)
 License: MIT + file LICENSE
 Imports:
-    curl,
+    curl
+Suggests:
     httr,
     openssl
 Encoding: UTF-8

@@ -14,19 +14,17 @@
 #'
 #' @seealso \link{available_clients}, \link{send_message}, \link{is.client_gmail}
 #'
-#' @importFrom httr oauth_app oauth2.0_token oauth_endpoints
-#' 
 #' @rdname client_gmail
 #' @export
 client_gmail <- function(email, key, secret) {
-    scope_list <- c("https://www.googleapis.com/auth/gmail.send")
-    gmail_send_app <- oauth_app("google",
-                                key = key,
-                                secret = secret)
+    assert(system.file(package = "httr") != "", "httr package is required for",
+           "OAuth authorization in client Gmail") # TODO(TM)
+
+    gmail_send_app <- httr::oauth_app("google", key = key, secret = secret)
     
-    google_token <- oauth2.0_token(oauth_endpoints("google"),
-                                   gmail_send_app,
-                                   scope = scope_list)
+    google_token <- httr::oauth2.0_token(httr::oauth_endpoints("google"),
+                                         gmail_send_app,
+                                         scope = "https://www.googleapis.com/auth/gmail.send")
     
     client <- client_notifieR("gmail")
     client$email <- email
@@ -55,13 +53,13 @@ is.client_gmail <- function(x) {
 
 #' @param subject a subject of an email message.
 #' 
-#' @importFrom curl new_handle handle_setopt handle_setheaders handle_reset curl_fetch_memory
-#'
 #' @rdname send_message
 #' @export
 send_message.client_gmail <- function(client, message, destination,
                                       verbose = FALSE,
                                       subject = "notifieR notification", ...) {
+    assert(system.file(package = "httr") != "",
+           "httr package is required") # TODO(TM)
   
     assert(is.client_gmail(client),
            "could not execute send_message.client_gmail method:",
@@ -70,16 +68,11 @@ send_message.client_gmail <- function(client, message, destination,
     post_url <- sprintf("https://www.googleapis.com/gmail/v1/users/%s/messages/send", client$email)
     msg_body <- create_mime_message(client$email, destination, subject, message)
     
-    headers <- c("Content-Type" = "application/json",
-                 "Authorization" = sprintf("Bearer %s", client$google_token$credentials$access_token))
-    options <- encode_body(msg_body)
-    
-    h <- new_handle()
-    handle_setopt(h, .list = options)
-    handle_setheaders(h, .list = headers)
-    on.exit(handle_reset(h))
-    
-    resp <- curl_fetch_memory(post_url, h)
+    resp <- httr::POST(
+        client$google_token,
+        url = post_url,
+        body = sprintf('{"raw": "%s"}', base64url(msg_body)),
+        httr::add_headers("Content-Type" = "application/json"))
     
     return_response(resp, verbose)
 }

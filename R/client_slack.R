@@ -44,7 +44,8 @@ is.client_slack <- function(x) {
 #'
 #' @inheritParams send_message
 #' 
-#' @importFrom curl new_handle handle_setopt curl_fetch_memory
+#' @importFrom curl curl_escape
+#' @importFrom httr POST add_headers
 #'
 #' @rdname client_slack
 #' 
@@ -58,7 +59,7 @@ send_message.client_slack <- function(client, message, destination = NA,
   
   icon_emoji <- sprintf(', "icon_emoji": "%s"', icon_emoji)
   username <- 'notifyr'
-  output <- url_escape_text(message)
+  output <- curl_escape(message)
   
   # TODO Picking a channel (destination)
   channel <- ifelse(is.na(destination),'#general',destination)
@@ -66,7 +67,7 @@ send_message.client_slack <- function(client, message, destination = NA,
   response <- POST(url = client$slack_webhook, 
        encode = "form",
        add_headers(`Content-Type` = "application/x-www-form-urlencoded",
-                   Accept = "*/*"), body = URLencode(sprintf("payload={\"channel\": \"%s\", \"username\": \"%s\", \"text\": \"```%s```\"%s}",
+                   Accept = "*/*"), body = curl_escape(sprintf("payload={\"channel\": \"%s\", \"username\": \"%s\", \"text\": \"```%s```\"%s}",
                                                              channel, username, output, icon_emoji)))
   return_response(response, verbose, decode_response)
 }

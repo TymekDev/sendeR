@@ -31,9 +31,7 @@ Client extending a \link{client_notifieR} for Slack service.
 In addition to any fields in the \link{client_notifieR} this one contains
 \code{slack webhook} which is needed to send a message via Slack Webhook API.
 
-Just go to:\n 
-\code{https://api.slack.com/messaging/webhooks}\n 
-and create Your own webhook to send messages.\n
+Just go to: \code{https://api.slack.com/messaging/webhooks} and create Your own webhook to send messages.
 Webhooks are permamently connected to one channel!
 
 \code{is.client_slack} checks if a provided object is of 

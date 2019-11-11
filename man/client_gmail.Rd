@@ -15,11 +15,11 @@ is.client_gmail(x)
   subject = "notifieR notification", ...)
 }
 \arguments{
-\item{email}{TODO}
+\item{email}{Email of reciver of the message.}
 
-\item{key}{TODO}
+\item{key}{\code{Key} created in Google API application.}
 
-\item{secret}{TODO}
+\item{secret}{\code{Secret Key} created in Google API application}
 
 \item{client}{TODO}
 
@@ -31,7 +31,7 @@ is.client_gmail(x)
 
 \item{decode_response}{TODO}
 
-\item{subject}{TODO}
+\item{subject}{Subject of email message.}
 }
 \description{
 Client extending a \link{client_notifieR} for Gmail service.

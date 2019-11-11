@@ -41,7 +41,7 @@ is.client_telegram <- function(x) {
 #'
 #' @inheritParams send_message
 #' 
-#' @importFrom curl new_handle handle_setopt curl_fetch_memory
+#' @importFrom curl curl_escape new_handle handle_setopt curl_fetch_memory
 #'
 #' @rdname client_telegram
 #' 
@@ -54,7 +54,7 @@ send_message.client_telegram <- function(client, message, destination,
            not_a_client("client", "telegram"))
     # TODO: assert that destination is a chat id
     url <- sprintf("https://api.telegram.org/bot%s/sendMessage?text=%s&chat_id=%s",
-                   client$telegram_token, url_escape_text(message), destination)
+                   client$telegram_token, curl_escape(message), destination)
     
     h <- new_handle()
     handle_setopt(h, customrequest = "GET")

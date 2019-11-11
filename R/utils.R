@@ -78,12 +78,8 @@ not_a_client <- function(argument_name, service_name) {
 
 
 # Wraper for curl response return.
-return_response <- function(response, verbose, decode_response) {
+return_response <- function(response, verbose) {
     if (verbose) {
-        if (decode_response) {
-            response$headers <- rawToChar(response$headers)
-            response$content <- rawToChar(response$content)
-        }
         return(response)
     }
     response$status_code

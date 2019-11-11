@@ -10,20 +10,18 @@
 \title{Methods for sending messages.}
 \usage{
 \method{send_message}{client_gmail}(client, message, destination,
-  verbose = FALSE, decode_response = TRUE,
-  subject = "notifieR notification", ...)
+  verbose = FALSE, subject = "notifieR notification", ...)
 
 \method{send_message}{client_notifieR}(client, message, destination,
-  verbose = FALSE, decode_response = TRUE, ...)
+  verbose = FALSE, ...)
 
 \method{send_message}{client_slack}(client, message, destination = NULL,
-  verbose = FALSE, decode_response = TRUE, ...)
+  verbose = FALSE, ...)
 
 \method{send_message}{client_telegram}(client, message, destination,
-  verbose = FALSE, decode_response = TRUE, ...)
+  verbose = FALSE, ...)
 
-send_message(client, message, destination, verbose = FALSE,
-  decode_response = TRUE, ...)
+send_message(client, message, destination, verbose = FALSE, ...)
 }
 \arguments{
 \item{client}{TODO}
@@ -33,8 +31,6 @@ send_message(client, message, destination, verbose = FALSE,
 \item{destination}{TODO}
 
 \item{verbose}{TODO}
-
-\item{decode_response}{TODO}
 
 \item{subject}{a subject of an email message.}
 

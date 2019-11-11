@@ -60,7 +60,7 @@ is.client_gmail <- function(x) {
 #' @rdname send_message
 #' @export
 send_message.client_gmail <- function(client, message, destination,
-                                      verbose = FALSE, decode_response = TRUE,
+                                      verbose = FALSE,
                                       subject = "notifieR notification", ...) {
   
     assert(is.client_gmail(client),
@@ -81,5 +81,5 @@ send_message.client_gmail <- function(client, message, destination,
     
     resp <- curl_fetch_memory(post_url, h)
     
-    return_response(resp, verbose, decode_response)
+    return_response(resp, verbose)
 }

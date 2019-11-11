@@ -43,8 +43,7 @@ is.client_slack <- function(x) {
 #' @rdname send_message
 #' @export
 send_message.client_slack <- function(client, message, destination = NULL,
-                                      verbose = FALSE, decode_response = TRUE,
-                                      ...) {
+                                      verbose = FALSE, ...) {
     assert(is.client_slack(client),
            "could not execute send_message.client_slack method:",
            not_a_client("client", "slack"))
@@ -69,5 +68,5 @@ send_message.client_slack <- function(client, message, destination = NULL,
 
     response <- curl_fetch_memory(client$slack_webhook, h)
 
-    return_response(response, verbose, decode_response)
+    return_response(response, verbose)
 }

@@ -52,8 +52,7 @@ is.client_notifieR <- function(x) {
 #' @rdname send_message
 #' @export
 send_message.client_notifieR <- function(client, message, destination,
-                                         verbose = FALSE,
-                                         decode_response = TRUE, ...) {
+                                         verbose = FALSE, ...) {
     assert(is.client_notifieR(client),
            "could not execute send_message.client_notifieR:",
            not_a_client("client", "notifieR"))

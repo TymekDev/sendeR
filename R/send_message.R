@@ -6,16 +6,13 @@
 #' @param message TODO
 #' @param destination TODO
 #' @param verbose TODO
-#' @param decode_response TODO
 #' @param ... TODO
 #' 
 #' @export
-send_message <- function(client, message, destination, verbose = FALSE,
-                         decode_response = TRUE, ...) {
+send_message <- function(client, message, destination, verbose = FALSE, ...) {
     if (is.character(client)) {
         client <- create_client(service_name = client, ...)
-        return(send_message(client, message, destination, verbose,
-                            decode_response, ...))
+        return(send_message(client, message, destination, verbose, ...))
     }
     
     assert(is.client_notifieR(client), "could not execute send_method:",

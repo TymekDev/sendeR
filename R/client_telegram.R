@@ -42,8 +42,7 @@ is.client_telegram <- function(x) {
 #' @rdname send_message
 #' @export
 send_message.client_telegram <- function(client, message, destination,
-                                         verbose = FALSE,
-                                         decode_response = TRUE, ...) {
+                                         verbose = FALSE, ...) {
     assert(is.client_telegram(client),
            "could not execute send_message.client_telegram method:",
            not_a_client("client", "telegram"))
@@ -56,5 +55,5 @@ send_message.client_telegram <- function(client, message, destination,
     response <- curl_fetch_memory(url, h)
     on.exit(handle_reset(h))
     
-    return_response(response, verbose, decode_response)
+    return_response(response, verbose)
 }

@@ -6,9 +6,10 @@
 #' the Telegram Bot API. For additional information on how to get required
 #' \code{telegram_token} see details.
 #' 
-#' @details TOOD(TM): how to get telegram_token
+#' @details To create your own telegram bot refer to
+#' \url{https://core.telegram.org/bots#6-botfather}.
 #' 
-#' @param telegram_token TODO(TM)
+#' @param telegram_token a bot token given by the Botfather.
 #' 
 #' @seealso \link{is.client_telegram}, \link{send_message}
 #' 
@@ -46,7 +47,7 @@ send_message.client_telegram <- function(client, message, destination,
     assert(is.client_telegram(client),
            "could not execute send_message.client_telegram method:",
            not_a_client("client", "telegram"))
-    # TODO: assert that destination is a chat id
+    # TODO(TM): assert that destination is a chat id
     url <- sprintf("https://api.telegram.org/bot%s/sendMessage?text=%s&chat_id=%s",
                    client$telegram_token, curl_escape(message), destination)
     

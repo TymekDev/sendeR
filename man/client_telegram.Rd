@@ -7,7 +7,7 @@
 client_telegram(telegram_token)
 }
 \arguments{
-\item{telegram_token}{TODO(TM)}
+\item{telegram_token}{a bot token given by the Botfather.}
 }
 \description{
 Client extending a \link{client_notifieR} for the Telegram
@@ -17,7 +17,8 @@ the Telegram Bot API. For additional information on how to get required
 \code{telegram_token} see details.
 }
 \details{
-TOOD(TM): how to get telegram_token
+To create your own telegram bot refer to
+\url{https://core.telegram.org/bots#6-botfather}.
 }
 \seealso{
 \link{is.client_telegram}, \link{send_message}

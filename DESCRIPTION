@@ -1,7 +1,7 @@
 Package: notifieR
 Type: Package
 Title: TODO
-Version: 0.3.4.9000
+Version: 0.3.5.9000
 Date: 2019-10-20
 Authors@R: c(
     person(given = "Tymoteusz", family = "Makowski", role = c("aut", "cre"),
@@ -9,7 +9,7 @@ Authors@R: c(
     person(given = "Tomasz", family = "Klonecki", role = c("aut"),
            email = "tomaszklonecki@gmail.com"))
 Description: TODO
-License: TODO
+License: MIT + file LICENSE
 Imports:
     curl,
     httr,

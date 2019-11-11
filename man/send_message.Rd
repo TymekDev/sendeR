@@ -24,21 +24,32 @@
 send_message(client, message, destination, verbose = FALSE, ...)
 }
 \arguments{
-\item{client}{TODO}
+\item{client}{one of the clients created by the notifieR package.}
 
-\item{message}{TODO}
+\item{message}{a text body of the message to send.}
 
-\item{destination}{TODO}
+\item{destination}{a destination of the message. For more details see
+\strong{Methods (by class)} section below.}
 
-\item{verbose}{TODO}
+\item{verbose}{if is set to \code{TRUE} then the function returns whole
+response instead of only a status_code.}
 
 \item{subject}{a subject of an email message.}
 
-\item{...}{TODO}
+\item{...}{\code{send_message} passes additional (non-standard) arguments to
+respective method. Client specific methods have this argument only for method
+overloading purposes.}
 }
 \description{
 The \code{send_message} method for the \code{client_notifieR}
 only serves as a placeholder.
-
-TODO
 }
+\section{Methods (by class)}{
+\itemize{
+\item \code{client_gmail}: \code{destination} is a recipient's email address.
+
+\item \code{client_slack}: \code{description} is a ... TODO(TK)
+
+\item \code{client_telegram}: \code{destination} is a recipient's chat id.
+}}
+

@@ -53,7 +53,7 @@ is.client_gmail <- function(x) {
 
 #' @param subject a subject of an email message.
 #' 
-#' @rdname send_message
+#' @describeIn send_message \code{destination} is a recipient's email address.
 #' @export
 send_message.client_gmail <- function(client, message, destination,
                                       verbose = FALSE,

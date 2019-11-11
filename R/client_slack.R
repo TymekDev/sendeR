@@ -40,7 +40,7 @@ is.client_slack <- function(x) {
 
 #' @importFrom curl curl_escape new_handle handle_setheaders handle_setopt curl_fetch_memory handle_reset
 #'
-#' @rdname send_message
+#' @describeIn send_message \code{description} is a ... TODO(TK)
 #' @export
 send_message.client_slack <- function(client, message, destination = NULL,
                                       verbose = FALSE, ...) {

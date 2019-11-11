@@ -39,7 +39,7 @@ is.client_telegram <- function(x) {
 
 #' @importFrom curl curl_escape new_handle handle_setopt curl_fetch_memory handle_reset
 #'
-#' @rdname send_message
+#' @describeIn send_message \code{destination} is a recipient's chat id.
 #' @export
 send_message.client_telegram <- function(client, message, destination,
                                          verbose = FALSE, ...) {

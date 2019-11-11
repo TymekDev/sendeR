@@ -40,12 +40,7 @@ default_fields.client_gmail <- function(client) {
 }
 
 
-#' @description \code{is.client_gmail} checks if a provided object is of
-#' the \code{client_gmail} class, whether it has all the fields
-#' a \code{client_gmail} should have and if it is a \link{client_notifieR}.
-#'
-#' @rdname client_gmail
-#'
+#' @rdname is.client_notifieR
 #' @export
 is.client_gmail <- function(x) {
     is.client_notifieR(x) &&

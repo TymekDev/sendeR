@@ -2,13 +2,10 @@
 % Please edit documentation in R/client_gmail.R
 \name{client_gmail}
 \alias{client_gmail}
-\alias{is.client_gmail}
 \alias{send_message.client_gmail}
 \title{Gmail client}
 \usage{
 client_gmail(email, key, secret)
-
-is.client_gmail(x)
 
 \method{send_message}{client_gmail}(client, message, destination,
   verbose = FALSE, decode_response = TRUE,
@@ -38,10 +35,6 @@ Client extending a \link{client_notifieR} for Gmail service.
 In addition to any fields in the \link{client_notifieR} this one contains
 \code{email},\code{key},\code{secret} which is needed to send a message via
 Gmail Send API.
-
-\code{is.client_gmail} checks if a provided object is of
-the \code{client_gmail} class, whether it has all the fields
-a \code{client_gmail} should have and if it is a \link{client_notifieR}.
 
 \link{send_message} method for \code{client_gmail}. TODO
 }

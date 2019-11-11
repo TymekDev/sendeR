@@ -27,11 +27,19 @@ default_fields.client_notifieR <- function(client) {
 }
 
 
+#' @title notifieR clients' verification
+#' 
 #' @description \code{is.client_notifieR} checks if a provided object is of 
 #' the \code{client_notifieR} class and whether it has all the fields
 #' a \code{client_notifieR} should have.
-#'
-#' @rdname client_notifieR
+#' 
+#' All other functions check if the provided object extends
+#' \code{client_notifieR} and whether it has all the fields a given client
+#' should have.
+#' 
+#' @param x object to be tested.
+#' 
+#' @rdname is.client_notifieR
 #' 
 #' @export
 is.client_notifieR <- function(x) {
@@ -60,6 +68,8 @@ send_message.client_notifieR <- function(client, message, destination,
 }
 
 
+#' @param x an object to print.
+#'
 #' @rdname client_notifieR
 #'
 #' @export

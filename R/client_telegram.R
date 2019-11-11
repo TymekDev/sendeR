@@ -23,12 +23,7 @@ default_fields.client_telegram <- function(client) {
 }
 
 
-#' @description \code{is.client_telegram} checks if a provided object is of 
-#' the \code{client_telegram} class, whether it has all the fields
-#' a \code{client_telegram} should have and if it is a \link{client_notifieR}.
-#'
-#' @rdname client_telegram
-#' 
+#' @rdname is.client_notifieR
 #' @export
 is.client_telegram <- function(x) {
     is.client_notifieR(x) &&

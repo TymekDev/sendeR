@@ -2,13 +2,10 @@
 % Please edit documentation in R/client_telegram.R
 \name{client_telegram}
 \alias{client_telegram}
-\alias{is.client_telegram}
 \alias{send_message.client_telegram}
 \title{Telegram client}
 \usage{
 client_telegram(telegram_token)
-
-is.client_telegram(x)
 
 \method{send_message}{client_telegram}(client, message, destination,
   verbose = FALSE, decode_response = TRUE, ...)
@@ -30,10 +27,6 @@ is.client_telegram(x)
 Client extending a \link{client_notifieR} for Telegram service.
 In addition to any fields in the \link{client_notifieR} this one contains
 \code{telegram_token} which is needed to send a message via Telegram API.
-
-\code{is.client_telegram} checks if a provided object is of 
-the \code{client_telegram} class, whether it has all the fields
-a \code{client_telegram} should have and if it is a \link{client_notifieR}.
 
 \link{send_message} method for \code{client_telegram}. TODO
 }

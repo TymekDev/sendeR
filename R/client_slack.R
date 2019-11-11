@@ -26,12 +26,7 @@ default_fields.client_slack <- function(client) {
 }
 
 
-#' @description \code{is.client_slack} checks if a provided object is of 
-#' the \code{client_slack} class, whether it has all the fields
-#' a \code{client_slack} should have and if it is a \link{client_notifieR}.
-#'
-#' @rdname client_slack
-#' 
+#' @rdname is.client_notifieR
 #' @export
 is.client_slack <- function(x) {
   is.client_notifieR(x) &&

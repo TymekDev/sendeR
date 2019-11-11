@@ -2,13 +2,10 @@
 % Please edit documentation in R/client_slack.R
 \name{client_slack}
 \alias{client_slack}
-\alias{is.client_slack}
 \alias{send_message.client_slack}
 \title{Slack client}
 \usage{
 client_slack(slack_webhook)
-
-is.client_slack(x)
 
 \method{send_message}{client_slack}(client, message, destination = NA,
   verbose = FALSE, decode_response = TRUE, ...)
@@ -33,10 +30,6 @@ In addition to any fields in the \link{client_notifieR} this one contains
 
 Just go to: \code{https://api.slack.com/messaging/webhooks} and create Your own webhook to send messages.
 Webhooks are permamently connected to one channel!
-
-\code{is.client_slack} checks if a provided object is of 
-the \code{client_slack} class, whether it has all the fields
-a \code{client_slack} should have and if it is a \link{client_notifieR}.
 
 \link{send_message} method for \code{client_slack}. TODO
 }

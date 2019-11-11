@@ -2,14 +2,11 @@
 % Please edit documentation in R/client_notifieR.R
 \name{client_notifieR}
 \alias{client_notifieR}
-\alias{is.client_notifieR}
 \alias{send_message.client_notifieR}
 \alias{print.client_notifieR}
 \title{notifieR client}
 \usage{
 client_notifieR(service)
-
-is.client_notifieR(x)
 
 \method{send_message}{client_notifieR}(client, message, destination,
   verbose = FALSE, decode_response = TRUE, ...)
@@ -28,15 +25,13 @@ is.client_notifieR(x)
 \item{verbose}{TODO}
 
 \item{decode_response}{TODO}
+
+\item{x}{an object to print.}
 }
 \description{
 Function creates an object of \code{client_notifieR} class with
 given \code{service} field, typically a name of selected service. This object
 is an underlying structure from which every other client is created.
-
-\code{is.client_notifieR} checks if a provided object is of 
-the \code{client_notifieR} class and whether it has all the fields
-a \code{client_notifieR} should have.
 
 \link{send_message} method for \code{client_notifieR} only
 serves as a placeholder. For details on how to create a custom client

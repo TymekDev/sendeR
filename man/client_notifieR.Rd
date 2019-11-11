@@ -22,5 +22,5 @@ of a \code{client_notifieR} class. This object is an underlying structure
 on which every other client is based.
 }
 \seealso{
-\link{available_clients}, \link{send_message}, \link{is.client_notifieR}
+\link{is.client_notifieR}, \link{send_message},
 }

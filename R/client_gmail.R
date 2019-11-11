@@ -12,7 +12,7 @@
 #' @param key a key created in a Google API application.
 #' @param secret a secret key created in a Google API application.
 #'
-#' @seealso \link{available_clients}, \link{send_message}, \link{is.client_gmail}
+#' @seealso \link{is.client_gmail}, \link{send_message}
 #'
 #' @rdname client_gmail
 #' @export

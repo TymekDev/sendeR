@@ -1,13 +1,15 @@
 Package: notifieR
 Type: Package
 Title: TODO(TM)
-Version: 0.4.2.9000
+Version: 0.4.3.9000
 Date: 2019-11-11
 Authors@R: c(
-    person(given = "Tymoteusz", family = "Makowski", role = c("aut", "cre"),
-           email = "makowski.tymoteusz@gmail.com"),
-    person(given = "Tomasz", family = "Klonecki", role = c("aut"),
-           email = "tomaszklonecki@gmail.com"))
+    person("Tymoteusz", "Makowski",
+           email = "makowski.tymoteusz@gmail.com",
+           role = c("aut", "cre")),
+    person("Tomasz", "Klonecki", 
+           email = "tomaszklonecki@gmail.com",
+           role = c("aut")))
 Description: TODO(TM)
 License: MIT + file LICENSE
 Imports:

@@ -11,7 +11,7 @@
 #' 
 #' @param slack_webhook a webhook obtained from the Slack API settings.
 #' 
-#' @seealso \link{available_clients}, \link{send_message}, \link{is.client_slack}
+#' @seealso \link{is.client_slack}, \link{send_message}, 
 #' 
 #' @rdname client_slack
 #' @export

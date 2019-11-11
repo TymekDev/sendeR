@@ -10,7 +10,7 @@
 #' 
 #' @param telegram_token TODO(TM)
 #' 
-#' @seealso \link{available_clients}, \link{send_message}, \link{is.client_telegram}
+#' @seealso \link{is.client_telegram}, \link{send_message}
 #' 
 #' @rdname client_telegram
 #' @export

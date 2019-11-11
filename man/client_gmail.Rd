@@ -24,5 +24,5 @@ on how to get required credentials see details.
 TODO(TK): how to get credentials.
 }
 \seealso{
-\link{available_clients}, \link{send_message}, \link{is.client_gmail}
+\link{is.client_gmail}, \link{send_message}
 }

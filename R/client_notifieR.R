@@ -6,7 +6,7 @@
 #' 
 #' @param service typically a name of service whose client extends the object.
 #' 
-#' @seealso \link{available_clients}, \link{send_message}, \link{is.client_notifieR}
+#' @seealso \link{is.client_notifieR}, \link{send_message}, 
 #' 
 #' @rdname client_notifieR
 #' @export

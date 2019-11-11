@@ -21,5 +21,5 @@ To create your own webhook head to
 \strong{Note}: Webhooks are permamently connected to one channel.
 }
 \seealso{
-\link{available_clients}, \link{send_message}, \link{is.client_slack}
+\link{is.client_slack}, \link{send_message},
 }

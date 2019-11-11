@@ -20,5 +20,5 @@ the Telegram Bot API. For additional information on how to get required
 TOOD(TM): how to get telegram_token
 }
 \seealso{
-\link{available_clients}, \link{send_message}, \link{is.client_telegram}
+\link{is.client_telegram}, \link{send_message}
 }

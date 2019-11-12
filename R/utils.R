@@ -20,10 +20,11 @@ assert <- function(condition, ...) {
 }
 
 
-# Internal httr package function.
+# Internal httr package function licensed by Hadley Wickham and RStudio under
+# MIT license (details: https://cran.r-project.org/web/packages/httr/).
 # Source: httr package version 1.4.1
 base64url <- function (x) {
-    assert(system.file(package = "httr") != "",
+    assert(system.file(package = "openssl") != "",
            "openssl package is required") # TODO(TM)
     
     if (is.character(x)) {

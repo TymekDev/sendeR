@@ -21,7 +21,7 @@ needed to send a message via the Gmail Send API. For additional information
 on how to get required credentials see details.
 }
 \details{
-To get Google credentials just follow the tutorial https://developers.google.com/adwords/api/docs/guides/authentication
+To get Google credentials just follow the tutorial \url{https://developers.google.com/adwords/api/docs/guides/authentication}
 }
 \seealso{
 \code{\link{is.client_gmail}}, \code{\link{send_message}}

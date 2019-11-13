@@ -56,4 +56,4 @@ send_message(my_telegram_client, "Hello world!", <chat_id>)
 
 ### Planned features
 - `quick_send_message` - method for sending messages in one line (client creation not required). Note: only for clients not requiring OAuth.
-- Searching system environment for required parameters during clients' construction if they are missing.
+- Searching system environment for required parameters during clients construction if they are missing.

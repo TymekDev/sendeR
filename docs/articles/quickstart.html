@@ -114,12 +114,16 @@
 <div id="destination-argument-details" class="section level3">
 <h3 class="hasAnchor">
 <a href="#destination-argument-details" class="anchor"></a>Destination argument details</h3>
-<p>TODO(TK)</p>
+<p>Destination for <code>client_gmail</code> simply is a recipient’s email. It does not have be your own email!</p>
 </div>
 <div id="additional-send_message-arguments" class="section level3">
 <h3 class="hasAnchor">
 <a href="#additional-send_message-arguments" class="anchor"></a>Additional <code>send_message</code> arguments</h3>
-<p>TODO(TK)</p>
+<p><code>send_message.client_gmail</code> has one additional argument:</p>
+<ul>
+<li>
+<code>subject</code> - a subject of the email message to be sent.</li>
+</ul>
 </div>
 </div>
 <div id="slack" class="section level2">
@@ -133,12 +137,12 @@
 <div id="destination-argument-details-1" class="section level3">
 <h3 class="hasAnchor">
 <a href="#destination-argument-details-1" class="anchor"></a>Destination argument details</h3>
-<p>TODO(TK)</p>
+<p>For <code>client_slack</code> this argument is not used because the created webhook is tied to a specific channel what renders <code>destination</code> parameter redundant. However the argument has to be present for implementing the main <code>send_message</code> method.</p>
 </div>
 <div id="additional-send_message-arguments-1" class="section level3">
 <h3 class="hasAnchor">
 <a href="#additional-send_message-arguments-1" class="anchor"></a>Additional <code>send_message</code> arguments</h3>
-<p>TODO(TK)</p>
+<p><code>send_message.client_slack</code> has no additional parameters as of now.</p>
 </div>
 </div>
 <div id="telegram" class="section level2">
@@ -147,7 +151,7 @@
 <div id="credentials-acquisition-2" class="section level3">
 <h3 class="hasAnchor">
 <a href="#credentials-acquisition-2" class="anchor"></a>Credentials acquisition</h3>
-<p>Creating a Telegram bot is really simply (simpler than guessing your chat id I would say!). To create the bow simply find the <code>@BotFather</code> - chat with it should look similarily to this:</p>
+<p>Creating a Telegram bot is really simply (simpler than guessing your chat id I would say!). To create the bow simply find the <code>@BotFather</code> - chat with it should look similarly to this:</p>
 <div class="figure">
 <img src="figures/telegram_fig01.png">
 </div>
@@ -175,7 +179,7 @@
     <span class="st">"ok"</span>:<span class="st"> </span>true,
     <span class="st">"result"</span>:<span class="st"> </span>[]
 }</code></pre></div>
-<p>Sending an example message “Hello!” to the bot and refreshing the page should result in response containing information similar to the one below (amongt other parameters).</p>
+<p>Sending an example message “Hello!” to the bot and refreshing the page should result in response containing information similar to the one below (among other parameters).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">{
     <span class="st">"ok"</span>:<span class="st"> </span>true,
     <span class="st">"result"</span>:<span class="st"> </span>[
@@ -201,7 +205,7 @@
 <div id="group-chats" class="section level4">
 <h4 class="hasAnchor">
 <a href="#group-chats" class="anchor"></a>Group chats</h4>
-<p>Similarily to the one on one chats we have to retrieve the information from <code>https://api.telegram.org/bot&lt;your-bot-token&gt;/getupdates</code> page.</p>
+<p>Similarly to the one on one chats we have to retrieve the information from <code>https://api.telegram.org/bot&lt;your-bot-token&gt;/getupdates</code> page.</p>
 <p>To get group’s chat id we need to add our bot to the group. Once the bot is added to the group an update containing following information should appear if we refresh the above page:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">{
     <span class="st">"ok"</span>:<span class="st"> </span>true,

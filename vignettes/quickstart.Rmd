@@ -32,10 +32,13 @@ Additionally, a client specific arguments can be passed through the ellipsis. Th
 TODO(TK)
 
 ### Destination argument details
-TODO(TK)
+Destination for `client_gmail` simply is a recipient's email. It does not have
+be your own email!
 
 ### Additional `send_message` arguments
-TODO(TK)
+`send_message.client_gmail` has one additional argument:
+
+ * `subject` - a subject of the email message to be sent.
 
 
 
@@ -44,16 +47,16 @@ TODO(TK)
 TODO(TK)
 
 ### Destination argument details
-TODO(TK)
+For `client_slack` this argument is not used because the created webhook is tied to a specific channel what renders `destination` parameter redundant. However the argument has to be present for implementing the main `send_message` method.
 
 ### Additional `send_message` arguments
-TODO(TK)
+`send_message.client_slack` has no additional parameters as of now.
 
 
 
 ## Telegram
 ### Credentials acquisition
-Creating a Telegram bot is really simply (simpler than guessing your chat id I would say!). To create the bow simply find the `@BotFather` - chat with it should look similarily to this:
+Creating a Telegram bot is really simply (simpler than guessing your chat id I would say!). To create the bow simply find the `@BotFather` - chat with it should look similarly to this:
 
 ![](figures/telegram_fig01.png)
 
@@ -84,7 +87,7 @@ Now we will use the bot to read our chat id. In order to do so head to `https://
 }
 ```
 
-Sending an example message "Hello!" to the bot and refreshing the page should result in response containing information similar to the one below (amongt other parameters).
+Sending an example message "Hello!" to the bot and refreshing the page should result in response containing information similar to the one below (among other parameters).
 ```{r, eval = FALSE}
 {
     "ok": true,
@@ -113,7 +116,7 @@ Note that the chat id and the user id are the same that is due to the user id be
 
 
 #### Group chats
-Similarily to the one on one chats we have to retrieve the information from `https://api.telegram.org/bot<your-bot-token>/getupdates` page.
+Similarly to the one on one chats we have to retrieve the information from `https://api.telegram.org/bot<your-bot-token>/getupdates` page.
 
 To get group's chat id we need to add our bot to the group. Once the bot is added to the group an update containing following information should appear if we refresh the above page:
 ```{r, eval = FALSE}
@@ -144,5 +147,3 @@ From the response we can extract the group id (note: group ids are negative numb
 
 ### Additional `send_message` arguments
 `send_message.client_telegram` has no additional parameters as of now.
-
-

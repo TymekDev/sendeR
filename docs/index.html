@@ -116,7 +116,7 @@ devtools::<span class="kw">install_github</span>(<span class="st">"tmakowski/sen
 <li>Create a client for one of the supported services. For details on how to get access to the service’s API please refer to given client’s documentation.</li>
 <li>Use <code>send_message</code> method on the created client.</li>
 </ol>
-<!-- end list --><div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"sendeR"</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"sendeR"</span>)
 my_telegram_client &lt;-<span class="st"> </span><span class="kw"><a href="reference/client_telegram.html">client_telegram</a></span>(&lt;my_bot_token&gt;)
 <span class="kw"><a href="reference/send_message.html">send_message</a></span>(my_telegram_client, <span class="st">"Hello world!"</span>, &lt;chat_id&gt;)</code></pre></div>
 <div id="important-remarks" class="section level4">
@@ -139,7 +139,7 @@ my_telegram_client &lt;-<span class="st"> </span><span class="kw"><a href="refer
 <ul>
 <li>
 <code>quick_send_message</code> - method for sending messages in one line (client creation not required). Note: only for clients not requiring OAuth.</li>
-<li>Searching system environment for required parameters during clients’ construction if they are missing.</li>
+<li>Searching system environment for required parameters during clients construction if they are missing.</li>
 </ul>
 </div>
 </div>

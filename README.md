@@ -1,6 +1,7 @@
 ## notifieR
 <!-- badges: start -->
   [![Travis build status](https://travis-ci.com/tmakowski/notifieR.svg?token=8VGPqiksfsHBtQHPsi4w&branch=master)](https://travis-ci.com/tmakowski/notifieR)
+  [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 <!-- badges: end -->
 
@@ -9,6 +10,14 @@
 notifieR is a package whose premise is sending messages to various messaging and/or mailing services using a simple unified interface with as little dependencies as possible.
 
 Package originated as a project for an Advanced R course at a Faculty of Mathematics and Information Science at the Warsaw University of Technology.
+
+
+### Installation
+To install the development package version from GitHub repository use the following code:
+```{r}
+# install.packages("devtools")
+devtools::install_github("tmakowski/notifieR")
+```
 
 
 ### Supported services

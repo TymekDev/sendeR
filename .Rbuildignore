@@ -9,3 +9,6 @@
 ^\.travis\.yml$
 ^logo\.png$
 ^README\.Rmd$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

@@ -1,0 +1,8 @@
+navbar:
+  left:
+  - icon: fa-home fa-lg
+    href: /index.html
+  - text: Intro
+    href: articles/quickstart.html
+  - text: Reference
+    href: reference/index.html

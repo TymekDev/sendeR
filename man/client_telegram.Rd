@@ -7,7 +7,7 @@
 client_telegram(telegram_token)
 }
 \arguments{
-\item{telegram_token}{a bot token given by the Botfather.}
+\item{telegram_token}{a bot token given by the BotFather.}
 }
 \description{
 Client extending a \code{\link{client_sendeR}} for the Telegram

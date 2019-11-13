@@ -9,7 +9,7 @@
 #' @details To create your own telegram bot refer to
 #' \url{https://core.telegram.org/bots#6-botfather}.
 #' 
-#' @param telegram_token a bot token given by the Botfather.
+#' @param telegram_token a bot token given by the BotFather.
 #' 
 #' @seealso \code{\link{is.client_telegram}}, \code{\link{send_message}}
 #' 

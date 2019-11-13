@@ -22,5 +22,5 @@ of a \code{client_sendeR} class. This object is an underlying structure
 on which every other client is based.
 }
 \seealso{
-\link{is.client_sendeR}, \link{send_message},
+\code{\link{is.client_sendeR}}, \code{\link{send_message}}
 }

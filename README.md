@@ -21,7 +21,7 @@ devtools::install_github("tmakowski/sendeR")
 
 
 ### Supported services
-Note: services requiring OAuth2.0 require `httr` and `openssl` (a `httr` subdependency) packages installed.
+Note: services requiring OAuth2.0 require `httr` and `openssl` packages installed.
 
  - [Gmail](https://gmail.com) **(OAuth2.0)**
  - [Slack](https://slack.com)
@@ -39,7 +39,7 @@ send_message(my_telegram_client, "Hello world!", <chat_id>)
 ```
 
 #### Important remarks
- - Creating `client_gmail` pauses code execution and waits for the OAuth2.0 authorization. This can be avoided in subsequent `client_gmail` calls if `httr` OAuth caching functionallity is used.
+ - Creating `client_gmail` pauses code execution and waits for the OAuth2.0 authorization. This can be avoided in subsequent `client_gmail` calls if `httr` OAuth caching functionality is used.
  - Currently (`v0.5.0`) passing an argument of wrong type to any function will result in a code stop due to failed assertion. Please test your sendeR calls before running long calculations.
 
 

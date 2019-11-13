@@ -14,15 +14,12 @@ client_gmail(email, key, secret)
 \item{secret}{a secret key created in a Google API application.}
 }
 \description{
-Client extending the \link{client_sendeR} for the Gmail
-service. In addition to any fields in the \link{client_sendeR} this one
+Client extending the \code{\link{client_sendeR}} for the Gmail
+service. In addition to any fields in the \code{\link{client_sendeR}} this one
 contains an \code{email}, a \code{key} and a \code{secret} fields which are
 needed to send a message via the Gmail Send API. For additional information
 on how to get required credentials see details.
 }
 \details{
 TODO(TK): how to get credentials.
-}
-\seealso{
-\link{is.client_gmail}, \link{send_message}
 }

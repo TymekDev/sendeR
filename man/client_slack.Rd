@@ -10,16 +10,16 @@ client_slack(slack_webhook)
 \item{slack_webhook}{a webhook obtained from the Slack API settings.}
 }
 \description{
-Client extending the \link{client_sendeR} for the Slack
-service. In addition to any fields in the \link{client_sendeR} this one
+Client extending the \code{\link{client_sendeR}} for the Slack
+service. In addition to any fields in the \code{\link{client_sendeR}} this one
 contains \code{slack_webhook} which is needed to send a message via the Slack
 Webhook API. For additional information on how to create a webhook see details.
 }
 \details{
 To create your own webhook head to
 \url{https://api.slack.com/messaging/webhooks}.
-\strong{Note}: Webhooks are permamently connected to one channel.
+\strong{Note}: Webhooks are permanently connected to one channel.
 }
 \seealso{
-\link{is.client_slack}, \link{send_message},
+\code{\link{is.client_slack}}, \code{\link{send_message}},
 }

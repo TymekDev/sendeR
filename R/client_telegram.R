@@ -1,7 +1,7 @@
 #' @title Telegram client
 #' 
-#' @description Client extending a \link{client_sendeR} for the Telegram
-#' service. In addition to any fields in the \link{client_sendeR} this one
+#' @description Client extending a \code{\link{client_sendeR}} for the Telegram
+#' service. In addition to any fields in the \code{\link{client_sendeR}} this one
 #' contains \code{telegram_token} which is needed to send a message via
 #' the Telegram Bot API. For additional information on how to get required
 #' \code{telegram_token} see details.
@@ -11,7 +11,7 @@
 #' 
 #' @param telegram_token a bot token given by the Botfather.
 #' 
-#' @seealso \link{is.client_telegram}, \link{send_message}
+#' @seealso \code{\link{is.client_telegram}}, \code{\link{send_message}}
 #' 
 #' @rdname client_telegram
 #' @export

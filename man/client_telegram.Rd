@@ -10,8 +10,8 @@ client_telegram(telegram_token)
 \item{telegram_token}{a bot token given by the Botfather.}
 }
 \description{
-Client extending a \link{client_sendeR} for the Telegram
-service. In addition to any fields in the \link{client_sendeR} this one
+Client extending a \code{\link{client_sendeR}} for the Telegram
+service. In addition to any fields in the \code{\link{client_sendeR}} this one
 contains \code{telegram_token} which is needed to send a message via
 the Telegram Bot API. For additional information on how to get required
 \code{telegram_token} see details.
@@ -21,5 +21,5 @@ To create your own telegram bot refer to
 \url{https://core.telegram.org/bots#6-botfather}.
 }
 \seealso{
-\link{is.client_telegram}, \link{send_message}
+\code{\link{is.client_telegram}}, \code{\link{send_message}}
 }

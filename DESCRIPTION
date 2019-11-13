@@ -1,6 +1,6 @@
 Package: sendeR
-Title: Simple interface for sending messages
-Version: 0.6.1.9000
+Title: Simple Interface for Sending Messages
+Version: 0.6.2.9000
 Date: 2019-11-13
 Authors@R: c(
     person("Tymoteusz", "Makowski",
@@ -10,7 +10,7 @@ Authors@R: c(
            email = "tomaszklonecki@gmail.com",
            role = c("aut")))
 Description: Various services allowing to send messages implemented in
-    a standarized simple (two functions per service) interface. Currently
+    a standardized simple (two functions per service) interface. Currently
     supporting: Gmail, Slack and Telegram.
 License: MIT + file LICENSE
 URL: https://github.com/tmakowski/sendeR

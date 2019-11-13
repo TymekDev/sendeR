@@ -7,7 +7,7 @@
 client_gmail(email, key, secret)
 }
 \arguments{
-\item{email}{an email of a recipient of the message.}
+\item{email}{an email of a sender of the message.}
 
 \item{key}{a key created in a Google API application.}
 
@@ -21,7 +21,7 @@ needed to send a message via the Gmail Send API. For additional information
 on how to get required credentials see details.
 }
 \details{
-TODO(TK): how to get credentials.
+To get Google credentials just follow the tutorial https://developers.google.com/adwords/api/docs/guides/authentication
 }
 \seealso{
 \code{\link{is.client_gmail}}, \code{\link{send_message}}

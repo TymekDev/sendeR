@@ -47,7 +47,7 @@ send_message(my_telegram_client, "Hello world!", <chat_id>)
 
 #### Important remarks
  - Creating `client_gmail` pauses code execution and waits for the OAuth2.0 authorization. This can be avoided in subsequent `client_gmail` calls if `httr` OAuth caching functionality is used.
- - Currently (`v0.5.0`) passing an argument of wrong type to any function will result in a code stop due to failed assertion. Please test your sendeR calls before running long calculations.
+ - Currently passing an argument of wrong type to any function will result in a code stop due to failed assertion. Please test your sendeR calls before running long calculations.
 
 
 ### How to contribute?

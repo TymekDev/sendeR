@@ -11,6 +11,8 @@
 #' @param ... \code{send_message} passes additional (non-standard) arguments to
 #'  respective method. Client specific methods have this argument only for
 #'  method overloading purposes.
+#'
+#' @importFrom curl has_internet
 #' 
 #' @export
 send_message <- function(client, message, destination, verbose = FALSE, ...) {
@@ -18,5 +20,9 @@ send_message <- function(client, message, destination, verbose = FALSE, ...) {
     assert(is_character_len1(message), msg_character_len1("message"))
     assert(is_logical_not_NA(verbose), msg_logical_not_NA("verbose"))
     
-    UseMethod("send_message")
+    if (has_internet()) {
+        UseMethod("send_message")
+    } else {
+        warning("Could not send the message: no internet connection detected.")
+    }
 }

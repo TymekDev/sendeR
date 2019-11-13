@@ -6,7 +6,7 @@ assert <- function(condition, details) {
     parent_func <- as.character(sys.call(-1)[1])
     
     if (!condition) {
-        stop(sprintf("%s: Check for <%s> failed:\n%s.",
+        stop(sprintf("%s: Check for <%s> failed:\n  %s.",
                      parent_func, condition_string, details), call. = FALSE)
     }
 }

@@ -6,7 +6,7 @@
 #' needed to send a message via the Gmail Send API. For additional information
 #' on how to get required credentials see details.
 #'
-#' @details TODO(TK): how to get credentials.
+#' @details To get Google credentials just follow the tutorial https://developers.google.com/adwords/api/docs/guides/authentication
 #'
 #' @param email an email of a sender of the message.
 #' @param key a key created in a Google API application.

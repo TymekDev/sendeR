@@ -8,3 +8,4 @@
 ^LICENSE\.md$
 ^\.travis\.yml$
 ^logo\.png$
+^README\.Rmd$

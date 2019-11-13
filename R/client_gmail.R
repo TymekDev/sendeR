@@ -8,7 +8,7 @@
 #'
 #' @details TODO(TK): how to get credentials.
 #'
-#' @param email an email of a recipient of the message.
+#' @param email an email of a sender of the message.
 #' @param key a key created in a Google API application.
 #' @param secret a secret key created in a Google API application.
 #'

@@ -11,7 +11,7 @@
 #' 
 #' @param slack_webhook a webhook obtained from the Slack API settings.
 #' 
-#' @seealso \code{\link{is.client_slack}}, \code{\link{send_message}}, 
+#' @seealso \code{\link{is.client_slack}}, \code{\link{send_message}}
 #' 
 #' @rdname client_slack
 #' @export
@@ -42,7 +42,8 @@ is.client_slack <- function(x) {
 
 #' @importFrom curl curl_escape new_handle handle_setheaders handle_setopt curl_fetch_memory handle_reset
 #'
-#' @describeIn send_message \code{description} is a ... TODO(TK)
+#' @describeIn send_message \code{destination} is not used because the Slack
+#' webhook is tied to a single channel.
 #' @export
 send_message.client_slack <- function(client, message, destination = NULL,
                                       verbose = FALSE, ...) {
@@ -52,18 +53,10 @@ send_message.client_slack <- function(client, message, destination = NULL,
            paste(msg_char_num_len1("destination"), "or a NULL"))
     assert(is_logical_not_NA(verbose), msg_logical_not_NA("verbose"))
   
-    channel <- if (is.null(destination)) "#general" else destination # TODO(TK): Picking a channel (destination)
-    username <- "sendeR"
-    # TODO(TK): initial value:
-    # icon_emoji <- sprintf(', "icon_emoji": "%s"', icon_emoji)
-    icon_emoji <- ""
-
     headers <- list("Content-Type" = "application/json")
     options <- list(
       "post" = TRUE,
-      "postfields" = sprintf(
-          '{"channel": "%s", "username": "%s", "text": "```%s```"%s}',
-          channel, username, curl_escape(message), icon_emoji))
+      "postfields" = sprintf('{"text": "```%s```"}', curl_escape(message)))
 
     h <- new_handle()
     handle_setheaders(h, .list = headers)

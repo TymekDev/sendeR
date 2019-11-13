@@ -50,7 +50,8 @@ only serves as a placeholder.
 \itemize{
 \item \code{client_gmail}: \code{destination} is a recipient's email address.
 
-\item \code{client_slack}: \code{description} is a ... TODO(TK)
+\item \code{client_slack}: \code{destination} is not used because the Slack
+webhook is tied to a single channel.
 
 \item \code{client_telegram}: \code{destination} is a recipient's chat id.
 }}

@@ -1,6 +1,6 @@
 Package: sendeR
 Title: Simple Interface for Sending Messages
-Version: 0.6.2.9000
+Version: 0.6.3.9000
 Date: 2019-11-13
 Authors@R: c(
     person("Tymoteusz", "Makowski",

@@ -23,3 +23,6 @@ on how to get required credentials see details.
 \details{
 TODO(TK): how to get credentials.
 }
+\seealso{
+\code{\link{is.client_gmail}}, \code{\link{send_message}}
+}

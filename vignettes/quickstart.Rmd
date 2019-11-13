@@ -29,7 +29,23 @@ Additionally, a client specific arguments can be passed through the ellipsis. Th
 
 ## Gmail
 ### Credentials acquisition
-TODO(TK)
+First visit Google API web interface: https://console.developers.google.com/apis/credentials
+
+Click Select a project, then NEW PROJECT, and enter a name for the project, and optionally, edit the provided project ID. Click Create.
+
+![](figures/gmail_fig01.png)
+
+On the Credentials page, select Create credentials, then OAuth client ID.
+
+![](figures/gmail_fig02.png)
+
+You may be prompted to set a product name on the Consent screen; if so, click Configure consent screen, supply the requested information, and click Save to return to the Credentials screen.
+
+Select Other for the Application type, and enter any additional information required.
+
+Click Create.
+
+On the page that appears, copy the client ID and client secret to your clipboard, as you will need them when you configure your client library.
 
 ### Destination argument details
 Destination for `client_gmail` simply is a recipient's email. It does not have
@@ -44,7 +60,20 @@ be your own email!
 
 ## Slack
 ### Credentials acquisition
-TODO(TK)
+Create a Slack app here: https://api.slack.com/apps?new_app=1
+
+![](figures/slack_fig01.png)
+
+Enable Incoming Webhooks from the settings page.
+
+![](figures/slack_fig02.png)
+
+After the settings page refreshes, click Add New Webhook to Workspace.
+Pick a channel that the app will post to, then click Authorize.
+
+![](figures/slack_fig03.png)
+
+Use your Incoming Webhook URL to post a message to Slack. 
 
 ### Destination argument details
 For `client_slack` this argument is not used because the created webhook is tied to a specific channel what renders `destination` parameter redundant. However the argument has to be present for implementing the main `send_message` method.

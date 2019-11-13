@@ -3,14 +3,14 @@
 %   R/client_slack.R, R/client_telegram.R
 \name{is.client_gmail}
 \alias{is.client_gmail}
-\alias{is.client_notifieR}
+\alias{is.client_sendeR}
 \alias{is.client_slack}
 \alias{is.client_telegram}
-\title{notifieR clients' verification}
+\title{sendeR clients' verification}
 \usage{
 is.client_gmail(x)
 
-is.client_notifieR(x)
+is.client_sendeR(x)
 
 is.client_slack(x)
 
@@ -20,11 +20,11 @@ is.client_telegram(x)
 \item{x}{an object to be tested.}
 }
 \description{
-\code{is.client_notifieR} tests if a provided object is of
-the \code{client_notifieR} class and whether it has all the fields
-a \code{client_notifieR} should have.
+\code{is.client_sendeR} tests if a provided object is of
+the \code{client_sendeR} class and whether it has all the fields
+a \code{client_sendeR} should have.
 
 All other functions check if the provided object extends
-\code{client_notifieR} (passes \code{is.client_notifieR} test) and whether it
+\code{client_sendeR} (passes \code{is.client_sendeR} test) and whether it
 has all the fields a given client should have.
 }

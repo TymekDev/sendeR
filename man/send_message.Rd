@@ -3,16 +3,16 @@
 %   R/client_slack.R, R/client_telegram.R, R/send_message.R
 \name{send_message.client_gmail}
 \alias{send_message.client_gmail}
-\alias{send_message.client_notifieR}
+\alias{send_message.client_sendeR}
 \alias{send_message.client_slack}
 \alias{send_message.client_telegram}
 \alias{send_message}
 \title{Methods for sending messages.}
 \usage{
 \method{send_message}{client_gmail}(client, message, destination,
-  verbose = FALSE, subject = "notifieR notification", ...)
+  verbose = FALSE, subject = "sendeR message", ...)
 
-\method{send_message}{client_notifieR}(client, message, destination,
+\method{send_message}{client_sendeR}(client, message, destination,
   verbose = FALSE, ...)
 
 \method{send_message}{client_slack}(client, message, destination = NULL,
@@ -24,7 +24,7 @@
 send_message(client, message, destination, verbose = FALSE, ...)
 }
 \arguments{
-\item{client}{one of the clients created by the notifieR package.}
+\item{client}{one of the clients created by the sendeR package.}
 
 \item{message}{a text body of the message to send. Should be a character
 vector of length one.}
@@ -43,7 +43,7 @@ respective method. Client specific methods have this argument only for
 method overloading purposes.}
 }
 \description{
-The \code{send_message} method for the \code{client_notifieR}
+The \code{send_message} method for the \code{client_sendeR}
 only serves as a placeholder.
 }
 \section{Methods (by class)}{

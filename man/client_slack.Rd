@@ -10,8 +10,8 @@ client_slack(slack_webhook)
 \item{slack_webhook}{a webhook obtained from the Slack API settings.}
 }
 \description{
-Client extending the \link{client_notifieR} for the Slack
-service. In addition to any fields in the \link{client_notifieR} this one
+Client extending the \link{client_sendeR} for the Slack
+service. In addition to any fields in the \link{client_sendeR} this one
 contains \code{slack_webhook} which is needed to send a message via the Slack
 Webhook API. For additional information on how to create a webhook see details.
 }

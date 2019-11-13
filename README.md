@@ -1,13 +1,13 @@
-## notifieR
+## sendeR
 <!-- badges: start -->
-  [![Travis build status](https://travis-ci.com/tmakowski/notifieR.svg?token=8VGPqiksfsHBtQHPsi4w&branch=master)](https://travis-ci.com/tmakowski/notifieR)
+  [![Travis build status](https://travis-ci.com/tmakowski/sendeR.svg?branch=master)](https://travis-ci.com/tmakowski/sendeR)
   [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 <!-- badges: end -->
 
 
 ### Overview
-notifieR is a package whose premise is sending messages to various messaging and/or mailing services using a simple unified interface with as little dependencies as possible.
+sendeR is a package whose premise is sending messages to various messaging and/or mailing services using a simple unified interface with as little dependencies as possible.
 
 Package originated as a project for an Advanced R course at a Faculty of Mathematics and Information Science at the Warsaw University of Technology.
 
@@ -16,12 +16,12 @@ Package originated as a project for an Advanced R course at a Faculty of Mathema
 To install the development package version from GitHub repository use the following code:
 ```{r}
 # install.packages("devtools")
-devtools::install_github("tmakowski/notifieR")
+devtools::install_github("tmakowski/sendeR")
 ```
 
 
 ### Supported services
-Note: services requiring OAuth2.0 require `httr` and `openssl` (`httr` dependency) packages installed.
+Note: services requiring OAuth2.0 require `httr` and `openssl` (a `httr` subdependency) packages installed.
 
  - [Gmail](https://gmail.com) **(OAuth2.0)**
  - [Slack](https://slack.com)
@@ -33,14 +33,14 @@ Note: services requiring OAuth2.0 require `httr` and `openssl` (`httr` dependenc
 1. Use `send_message` method on the created client.
 
 ```{r}
-library("notifieR")
+library("sendeR")
 my_telegram_client <- client_telegram(<my_bot_token>)
 send_message(my_telegram_client, "Hello world!", <chat_id>)
 ```
 
 #### Important remarks
  - Creating `client_gmail` pauses code execution and waits for the OAuth2.0 authorization. This can be avoided in subsequent `client_gmail` calls if `httr` OAuth caching functionallity is used.
- - Currently (`v0.5.0`) passing an argument of wrong type to any function will result in a code stop due to failed assertion. Please test your notifieR calls before running long calculations.
+ - Currently (`v0.5.0`) passing an argument of wrong type to any function will result in a code stop due to failed assertion. Please test your sendeR calls before running long calculations.
 
 
 ### How to contribute?
@@ -48,5 +48,5 @@ send_message(my_telegram_client, "Hello world!", <chat_id>)
 
 
 ### Planned features
-- `quick_send_message` - method for sending notifications in one line (client creation not required). Note: only for clients not requiring OAuth.
+- `quick_send_message` - method for sending messages in one line (client creation not required). Note: only for clients not requiring OAuth.
 - Searching system environment for required parameters during clients' construction if they are missing.

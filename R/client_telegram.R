@@ -1,7 +1,7 @@
 #' @title Telegram client
 #' 
-#' @description Client extending a \link{client_notifieR} for the Telegram
-#' service. In addition to any fields in the \link{client_notifieR} this one
+#' @description Client extending a \link{client_sendeR} for the Telegram
+#' service. In addition to any fields in the \link{client_sendeR} this one
 #' contains \code{telegram_token} which is needed to send a message via
 #' the Telegram Bot API. For additional information on how to get required
 #' \code{telegram_token} see details.
@@ -18,7 +18,7 @@
 client_telegram <- function(telegram_token) {
     assert(is_character_len1(telegram_token), msg_character_len1(telegram_token))
 
-    client <- client_notifieR("telegram")
+    client <- client_sendeR("telegram")
     client$telegram_token <- telegram_token
 
     add_class(client, "client_telegram")
@@ -31,10 +31,10 @@ default_fields.client_telegram <- function(client) {
 }
 
 
-#' @rdname is.client_notifieR
+#' @rdname is.client_sendeR
 #' @export
 is.client_telegram <- function(x) {
-    is.client_notifieR(x) &&
+    is.client_sendeR(x) &&
         inherits(x, "client_telegram") &&
         all(default_fields.client_telegram(x) %in% names(x))   
 }

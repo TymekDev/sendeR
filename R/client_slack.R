@@ -1,7 +1,7 @@
 #' @title Slack client
 #' 
-#' @description Client extending the \link{client_notifieR} for the Slack
-#' service. In addition to any fields in the \link{client_notifieR} this one
+#' @description Client extending the \link{client_sendeR} for the Slack
+#' service. In addition to any fields in the \link{client_sendeR} this one
 #' contains \code{slack_webhook} which is needed to send a message via the Slack
 #' Webhook API. For additional information on how to create a webhook see details.
 #' 
@@ -18,7 +18,7 @@
 client_slack <- function(slack_webhook) {
     assert(is_character_len1(slack_webhook), msg_character_len1(slack_webhook))
 
-    client <- client_notifieR("slack")
+    client <- client_sendeR("slack")
     client$slack_webhook <- slack_webhook
   
     add_class(client, "client_slack")
@@ -31,10 +31,10 @@ default_fields.client_slack <- function(client) {
 }
 
 
-#' @rdname is.client_notifieR
+#' @rdname is.client_sendeR
 #' @export
 is.client_slack <- function(x) {
-    is.client_notifieR(x) &&
+    is.client_sendeR(x) &&
       inherits(x, "client_slack") &&
       all(default_fields.client_slack(x) %in% names(x))
 }
@@ -53,7 +53,7 @@ send_message.client_slack <- function(client, message, destination = NULL,
     assert(is_logical_not_NA(verbose), msg_logical_not_NA("verbose"))
   
     channel <- if (is.null(destination)) "#general" else destination # TODO(TK): Picking a channel (destination)
-    username <- "notifieR"
+    username <- "sendeR"
     # TODO(TK): initial value:
     # icon_emoji <- sprintf(', "icon_emoji": "%s"', icon_emoji)
     icon_emoji <- ""

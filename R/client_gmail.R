@@ -1,7 +1,7 @@
 #' @title Gmail client
 #'
-#' @description Client extending the \link{client_notifieR} for the Gmail
-#' service. In addition to any fields in the \link{client_notifieR} this one
+#' @description Client extending the \link{client_sendeR} for the Gmail
+#' service. In addition to any fields in the \link{client_sendeR} this one
 #' contains an \code{email}, a \code{key} and a \code{secret} fields which are
 #' needed to send a message via the Gmail Send API. For additional information
 #' on how to get required credentials see details.
@@ -29,7 +29,7 @@ client_gmail <- function(email, key, secret) {
         httr::oauth_endpoints("google"), gmail_send_app,
         scope = "https://www.googleapis.com/auth/gmail.send")
     
-    client <- client_notifieR("gmail")
+    client <- client_sendeR("gmail")
     client$email <- email
     client$key <- key
     client$secret <- secret
@@ -45,10 +45,10 @@ default_fields.client_gmail <- function(client) {
 }
 
 
-#' @rdname is.client_notifieR
+#' @rdname is.client_sendeR
 #' @export
 is.client_gmail <- function(x) {
-    is.client_notifieR(x) &&
+    is.client_sendeR(x) &&
         inherits(x, "client_gmail") &&
         all(default_fields.client_gmail(x) %in% names(x))
 }
@@ -60,7 +60,7 @@ is.client_gmail <- function(x) {
 #' @export
 send_message.client_gmail <- function(client, message, destination,
                                       verbose = FALSE,
-                                      subject = "notifieR notification", ...) {
+                                      subject = "sendeR message", ...) {
     assert(package_installed("httr"),
            "httr package is required for sending message with client_gmail (OAuth2.0)")
     assert(is.client_gmail(client), not_a_client("client", "gmail"))

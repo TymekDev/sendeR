@@ -11,21 +11,12 @@ add_class <- function(object, new_class, as_first = TRUE) {
 }
 
 
-# A stop wrapper which stops only if a condition is not met and displays
-# provided message.
-assert <- function(condition, ...) {
-    if (!condition) {
-        stop(paste(...), call. = FALSE)
-    }
-}
-
-
 # Internal httr package function licensed by Hadley Wickham and RStudio under
 # MIT license (details: https://cran.r-project.org/web/packages/httr/).
 # Source: httr package version 1.4.1
 base64url <- function (x) {
-    assert(system.file(package = "openssl") != "",
-           "openssl package is required") # TODO(TM)
+    assert(package_installed("openssl"),
+           "openssl package is required for performing base64 encoding")
     
     if (is.character(x)) {
         x <- charToRaw(x)
@@ -66,11 +57,9 @@ format_fields <- function(client, field_names) {
 }
 
 
-# Function for creating standard error thrown during the client_notifieR type
-# assertion.
-not_a_client <- function(argument_name, service_name) {
-    sprintf("provided <%s> argument is either incomplete or not a %s client.",
-            argument_name, service_name)
+# Function checks whether a package with given name exists.
+package_installed <- function(package_name) {
+    system.file(package = package_name) != ""
 }
 
 

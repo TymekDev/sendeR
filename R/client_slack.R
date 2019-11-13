@@ -16,6 +16,8 @@
 #' @rdname client_slack
 #' @export
 client_slack <- function(slack_webhook) {
+    assert(is_character_len1(slack_webhook), msg_character_len1(slack_webhook))
+
     client <- client_notifieR("slack")
     client$slack_webhook <- slack_webhook
   
@@ -44,9 +46,11 @@ is.client_slack <- function(x) {
 #' @export
 send_message.client_slack <- function(client, message, destination = NULL,
                                       verbose = FALSE, ...) {
-    assert(is.client_slack(client),
-           "could not execute send_message.client_slack method:",
-           not_a_client("client", "slack"))
+    assert(is.client_slack(client), not_a_client("client", "slack"))
+    assert(is_character_len1(message), msg_character_len1("message"))
+    assert(is_character_len1(destination) || is.null(destination),
+           paste(msg_char_num_len1("destination"), "or a NULL"))
+    assert(is_logical_not_NA(verbose), msg_logical_not_NA("verbose"))
   
     channel <- if (is.null(destination)) "#general" else destination # TODO(TK): Picking a channel (destination)
     username <- "notifieR"
@@ -58,8 +62,8 @@ send_message.client_slack <- function(client, message, destination = NULL,
     options <- list(
       "post" = TRUE,
       "postfields" = sprintf(
-        '{"channel": "%s", "username": "%s", "text": "```%s```"%s}',
-        channel, username, curl_escape(message), icon_emoji))
+          '{"channel": "%s", "username": "%s", "text": "```%s```"%s}',
+          channel, username, curl_escape(message), icon_emoji))
 
     h <- new_handle()
     handle_setheaders(h, .list = headers)

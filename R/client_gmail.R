@@ -17,14 +17,17 @@
 #' @rdname client_gmail
 #' @export
 client_gmail <- function(email, key, secret) {
-    assert(system.file(package = "httr") != "", "httr package is required for",
-           "OAuth authorization in client Gmail") # TODO(TM)
+    assert(package_installed("httr"),
+           "httr package is required for OAuth authorization in client_gmail")
+    assert(is_character_len1(email), msg_character_len1("email"))
+    assert(is_character_len1(key), msg_character_len1("key"))
+    assert(is_character_len1(secret), msg_character_len1("secret"))
 
     gmail_send_app <- httr::oauth_app("google", key = key, secret = secret)
     
-    google_token <- httr::oauth2.0_token(httr::oauth_endpoints("google"),
-                                         gmail_send_app,
-                                         scope = "https://www.googleapis.com/auth/gmail.send")
+    google_token <- httr::oauth2.0_token(
+        httr::oauth_endpoints("google"), gmail_send_app,
+        scope = "https://www.googleapis.com/auth/gmail.send")
     
     client <- client_notifieR("gmail")
     client$email <- email
@@ -58,13 +61,14 @@ is.client_gmail <- function(x) {
 send_message.client_gmail <- function(client, message, destination,
                                       verbose = FALSE,
                                       subject = "notifieR notification", ...) {
-    assert(system.file(package = "httr") != "",
-           "httr package is required") # TODO(TM)
+    assert(package_installed("httr"),
+           "httr package is required for sending message with client_gmail (OAuth2.0)")
+    assert(is.client_gmail(client), not_a_client("client", "gmail"))
+    assert(is_character_len1(message), msg_character_len1("message"))
+    assert(is_character_len1(destination), msg_character_len1("destination"))
+    assert(is_logical_not_NA(verbose), msg_logical_not_NA("verbose"))
+    assert(is_character_len1(subject), msg_character_len1("subject"))
   
-    assert(is.client_gmail(client),
-           "could not execute send_message.client_gmail method:",
-           not_a_client("client", "gmail"))
-    
     post_url <- sprintf("https://www.googleapis.com/gmail/v1/users/%s/messages/send", client$email)
     msg_body <- create_mime_message(client$email, destination, subject, message)
     

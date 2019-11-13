@@ -11,8 +11,7 @@
 #' @rdname client_notifieR
 #' @export
 client_notifieR <- function(service) {
-    assert(is.character(service), "could not create a notifieR client:",
-           "provided <service> argument is not a character.")
+    assert(is_character_len1(service), msg_character_len1("service"))
     
     client <- list("service" = service)
     add_class(client, "client_notifieR")
@@ -53,11 +52,9 @@ is.client_notifieR <- function(x) {
 #' @export
 send_message.client_notifieR <- function(client, message, destination,
                                          verbose = FALSE, ...) {
-    assert(is.client_notifieR(client),
-           "could not execute send_message.client_notifieR:",
-           not_a_client("client", "notifieR"))
+    assert(is.client_notifieR(client), not_a_client("client", "notifieR"))
 
-    warning("Method not implemented. See ?client_notifieR for details.")
+    warning("client_NotifieR does not support sending messages.")
 }
 
 
@@ -67,8 +64,7 @@ send_message.client_notifieR <- function(client, message, destination,
 #' @rdname client_notifieR
 #' @export
 print.client_notifieR <- function(x, ...) {
-    assert(is.client_notifieR(x), "could not print a notifieR client:",
-           not_a_client("x", "notifieR"))
+    assert(is.client_notifieR(x), not_a_client("x", "notifieR"))
     
     cat(format(x))
 }
@@ -78,8 +74,7 @@ print.client_notifieR <- function(x, ...) {
 # client_notifieR. This method is intended to be used only in
 # a print.client_notifieR method.
 format.client_notifieR <- function(x, ...) {
-    assert(is.client_notifieR(x), "could not format a notifieR client:",
-           not_a_client("x", "notifieR"))
+    assert(is.client_notifieR(x), not_a_client("x", "notifieR"))
     
     defaults <- setdiff(default_fields(x), "service")
     if (length(defaults) > 0) {

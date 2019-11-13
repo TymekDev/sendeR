@@ -26,10 +26,12 @@ send_message(client, message, destination, verbose = FALSE, ...)
 \arguments{
 \item{client}{one of the clients created by the notifieR package.}
 
-\item{message}{a text body of the message to send.}
+\item{message}{a text body of the message to send. Should be a character
+vector of length one.}
 
-\item{destination}{a destination of the message. For more details see
-\strong{Methods (by class)} section below.}
+\item{destination}{a destination of the message. Should be a character
+vector of length one. For more details see \strong{Methods (by class)}
+section below.}
 
 \item{verbose}{if is set to \code{TRUE} then the function returns whole
 response instead of only a status_code.}
@@ -37,8 +39,8 @@ response instead of only a status_code.}
 \item{subject}{a subject of an email message.}
 
 \item{...}{\code{send_message} passes additional (non-standard) arguments to
-respective method. Client specific methods have this argument only for method
-overloading purposes.}
+respective method. Client specific methods have this argument only for
+method overloading purposes.}
 }
 \description{
 The \code{send_message} method for the \code{client_notifieR}

@@ -29,6 +29,10 @@ my_telegram_client <- client_telegram(<my_bot_token>)
 send_message(my_telegram_client, "Hello world!", <chat_id>)
 ```
 
+#### Important remarks
+ - Creating `client_gmail` pauses code execution and waits for the OAuth2.0 authorization. This can be avoided in subsequent `client_gmail` calls if `httr` OAuth caching functionallity is used.
+ - Currently (`v0.5.0`) passing an argument of wrong type to any function will result in a code stop due to failed assertion. Please test your notifieR calls before running long calculations.
+
 
 ### How to contribute?
 *Coming soon...*

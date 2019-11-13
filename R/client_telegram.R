@@ -16,9 +16,11 @@
 #' @rdname client_telegram
 #' @export
 client_telegram <- function(telegram_token) {
+    assert(is_character_len1(telegram_token), msg_character_len1(telegram_token))
+
     client <- client_notifieR("telegram")
     client$telegram_token <- telegram_token
-    
+
     add_class(client, "client_telegram")
 }
 
@@ -44,12 +46,14 @@ is.client_telegram <- function(x) {
 #' @export
 send_message.client_telegram <- function(client, message, destination,
                                          verbose = FALSE, ...) {
-    assert(is.client_telegram(client),
-           "could not execute send_message.client_telegram method:",
-           not_a_client("client", "telegram"))
-    # TODO(TM): assert that destination is a chat id
-    url <- sprintf("https://api.telegram.org/bot%s/sendMessage?text=%s&chat_id=%s",
-                   client$telegram_token, curl_escape(message), destination)
+    assert(is.client_telegram(client), not_a_client("client", "telegram"))
+    assert(is_character_len1(message), msg_character_len1("message"))
+    assert(is_char_num_len1(destination), msg_char_num_len1("destination"))
+    assert(is_logical_not_NA(verbose), msg_logical_not_NA("verbose"))
+
+    url <- sprintf(
+        "https://api.telegram.org/bot%s/sendMessage?text=%s&chat_id=%s",
+        client$telegram_token, curl_escape(message), destination)
     
     h <- new_handle()
     handle_setopt(h, customrequest = "GET")

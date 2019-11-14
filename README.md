@@ -46,7 +46,7 @@ send_message(my_telegram_client, "Hello world!", <chat_id>)
 -   Currently passing an argument of wrong type to any function will result in a code stop due to failed assertion. Please test your sendeR calls before running long calculations.
 
 ### Cheatsheet
-
+[PDF Version](cheatsheet/sendeR_cheatsheet.pdf)
 ![](cheatsheet/sendeR_cheatsheet.png)
 
 ### How to contribute?

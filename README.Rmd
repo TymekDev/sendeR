@@ -51,7 +51,7 @@ send_message(my_telegram_client, "Hello world!", <chat_id>)
 
 
 ### Cheatsheet
-![](cheatsheet/sendeR_cheatsheet.png)
+[![sendeR cheatsheet](cheatsheet/sendeR_cheatsheet.png)](cheatsheet/sendeR_cheatsheet.png)
 
 
 ### How to contribute?

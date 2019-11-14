@@ -2,6 +2,8 @@
 title: "sendeR Cheatsheet"
 date: 2019-11-14
 output: rmarkdown::html_vignette
+resource_files:
+  - cheatsheet/*
 vignette: >
   %\VignetteIndexEntry{cheatsheet}
   %\VignetteEngine{knitr::rmarkdown}

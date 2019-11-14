@@ -27,7 +27,7 @@ devtools::install_github("tmakowski/sendeR")
 ```
 
 
-### Supported services
+### Supported Services
 Note: services requiring OAuth2.0 require `httr` and `openssl` packages installed.
 
  - [Gmail](https://gmail.com) **(OAuth2.0)**
@@ -45,15 +45,19 @@ my_telegram_client <- client_telegram(<my_bot_token>)
 send_message(my_telegram_client, "Hello world!", <chat_id>)
 ```
 
-#### Important remarks
+#### Important Remarks
  - Creating `client_gmail` pauses code execution and waits for the OAuth2.0 authorization. This can be avoided in subsequent `client_gmail` calls if `httr` OAuth caching functionality is used.
  - Currently passing an argument of wrong type to any function will result in a code stop due to failed assertion. Please test your sendeR calls before running long calculations.
+
+
+### Cheatsheet
+![](cheatsheet/sendeR_cheatsheet.png)
 
 
 ### How to contribute?
 *Coming soon...*
 
 
-### Planned features
+### Planned Features
 - `quick_send_message` - method for sending messages in one line (client creation not required). Note: only for clients not requiring OAuth.
 - Searching system environment for required parameters during clients construction if they are missing.

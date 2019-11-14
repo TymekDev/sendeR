@@ -40,7 +40,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">sendeR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.2.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.3.9000</span>
       </span>
     </div>
 
@@ -53,7 +53,10 @@
   </a>
 </li>
 <li>
-  <a href="articles/quickstart.html">Intro</a>
+  <a href="articles/quickstart.html">Getting Started</a>
+</li>
+<li>
+  <a href="articles/cheatsheet.html">Cheatsheet</a>
 </li>
 <li>
   <a href="reference/index.html">Reference</a>
@@ -99,7 +102,7 @@ devtools::<span class="kw">install_github</span>(<span class="st">"tmakowski/sen
 </div>
 <div id="supported-services" class="section level3">
 <h3 class="hasAnchor">
-<a href="#supported-services" class="anchor"></a>Supported services</h3>
+<a href="#supported-services" class="anchor"></a>Supported Services</h3>
 <p>Note: services requiring OAuth2.0 require <code>httr</code> and <code>openssl</code> packages installed.</p>
 <ul>
 <li>
@@ -116,17 +119,22 @@ devtools::<span class="kw">install_github</span>(<span class="st">"tmakowski/sen
 <li>Create a client for one of the supported services. For details on how to get access to the service’s API please refer to given client’s documentation.</li>
 <li>Use <code>send_message</code> method on the created client.</li>
 </ol>
-<!-- end list --><div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"sendeR"</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"sendeR"</span>)
 my_telegram_client &lt;-<span class="st"> </span><span class="kw"><a href="reference/client_telegram.html">client_telegram</a></span>(&lt;my_bot_token&gt;)
 <span class="kw"><a href="reference/send_message.html">send_message</a></span>(my_telegram_client, <span class="st">"Hello world!"</span>, &lt;chat_id&gt;)</code></pre></div>
 <div id="important-remarks" class="section level4">
 <h4 class="hasAnchor">
-<a href="#important-remarks" class="anchor"></a>Important remarks</h4>
+<a href="#important-remarks" class="anchor"></a>Important Remarks</h4>
 <ul>
 <li>Creating <code>client_gmail</code> pauses code execution and waits for the OAuth2.0 authorization. This can be avoided in subsequent <code>client_gmail</code> calls if <code>httr</code> OAuth caching functionality is used.</li>
 <li>Currently passing an argument of wrong type to any function will result in a code stop due to failed assertion. Please test your sendeR calls before running long calculations.</li>
 </ul>
 </div>
+</div>
+<div id="cheatsheet" class="section level3">
+<h3 class="hasAnchor">
+<a href="#cheatsheet" class="anchor"></a>Cheatsheet</h3>
+<p><img src="cheatsheet/sendeR_cheatsheet.png"></p>
 </div>
 <div id="how-to-contribute" class="section level3">
 <h3 class="hasAnchor">
@@ -135,7 +143,7 @@ my_telegram_client &lt;-<span class="st"> </span><span class="kw"><a href="refer
 </div>
 <div id="planned-features" class="section level3">
 <h3 class="hasAnchor">
-<a href="#planned-features" class="anchor"></a>Planned features</h3>
+<a href="#planned-features" class="anchor"></a>Planned Features</h3>
 <ul>
 <li>
 <code>quick_send_message</code> - method for sending messages in one line (client creation not required). Note: only for clients not requiring OAuth.</li>

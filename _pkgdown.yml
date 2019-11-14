@@ -2,7 +2,9 @@ navbar:
   left:
   - icon: fa-home fa-lg
     href: /index.html
-  - text: Intro
+  - text: Getting Started
     href: articles/quickstart.html
+  - text: Cheatsheet
+    href: articles/cheatsheet.html
   - text: Reference
     href: reference/index.html

@@ -1,6 +1,6 @@
 ---
-title: "Getting started with sendeR"
-date: 2019-11-13
+title: "Getting Started with sendeR"
+date: 2019-11-14
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{quickstart}
@@ -106,7 +106,7 @@ For Telegram client the `destination` argument is a chat_id where the message is
 #### One on one chats
 If we want to send messages to the one on one chat with bot. To do that open the chat with bot and initialize the chat by pressing `/start` as shown below.
 
-<img src="figures/telegram_fig04.png" width="45%"> <img src="figures/telegram_fig05.png" width="45%">
+![](figures/telegram_fig04.png){width=45%} ![](figures/telegram_fig05.png){width=45%}
 
 Now we will use the bot to read our chat id. In order to do so head to `https://api.telegram.org/bot<your-bot-token>/getupdates`. Page should display a JSON response with no updates received by the bot:
 ```{r, eval = FALSE}

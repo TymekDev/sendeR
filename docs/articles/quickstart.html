@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Getting started with sendeR • sendeR</title>
+<title>Getting Started with sendeR • sendeR</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -16,7 +16,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Getting started with sendeR">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Getting Started with sendeR">
 <meta property="og:description" content="">
 <meta property="og:image" content="/logo.png">
 <meta name="twitter:card" content="summary">
@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">sendeR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.2.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.3.9000</span>
       </span>
     </div>
 
@@ -51,7 +51,10 @@
   </a>
 </li>
 <li>
-  <a href="../articles/quickstart.html">Intro</a>
+  <a href="../articles/quickstart.html">Getting Started</a>
+</li>
+<li>
+  <a href="../articles/cheatsheet.html">Cheatsheet</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -77,9 +80,9 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>Getting started with sendeR</h1>
+      <h1>Getting Started with sendeR</h1>
             
-            <h4 class="date">2019-11-13</h4>
+            <h4 class="date">2019-11-14</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/tmakowski/sendeR/blob/master/vignettes/quickstart.Rmd"><code>vignettes/quickstart.Rmd</code></a></small>
       <div class="hidden name"><code>quickstart.Rmd</code></div>
@@ -197,7 +200,7 @@
 <h4 class="hasAnchor">
 <a href="#one-on-one-chats" class="anchor"></a>One on one chats</h4>
 <p>If we want to send messages to the one on one chat with bot. To do that open the chat with bot and initialize the chat by pressing <code>/start</code> as shown below.</p>
-<p><img src="figures/telegram_fig04.png" width="45%"><img src="figures/telegram_fig05.png" width="45%"></p>
+<p><img src="figures/telegram_fig04.png" style="width:45.0%"><img src="figures/telegram_fig05.png" style="width:45.0%"></p>
 <p>Now we will use the bot to read our chat id. In order to do so head to <code>https://api.telegram.org/bot&lt;your-bot-token&gt;/getupdates</code>. Page should display a JSON response with no updates received by the bot:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">{
     <span class="st">"ok"</span>:<span class="st"> </span>true,

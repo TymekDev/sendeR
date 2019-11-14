@@ -1,0 +1,11 @@
+---
+title: "sendeR Cheatsheet"
+date: 2019-11-14
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{cheatsheet}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+<embed src="figures/sendeR_cheatsheet.pdf#toolbar=0" width="100%" style="min-height:49vh;" />

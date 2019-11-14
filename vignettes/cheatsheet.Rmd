@@ -10,9 +10,4 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-<embed data="cheatsheet/sendeR_cheatsheet.pdf#toolbar=0" type="application/pdf" width="100%" style="min-height:49vh;">
-    <noembed>
-        <a href="cheatsheet/sendeR_cheatsheet.pdf">Download PDF Version</a>
-        <img src="cheatsheet/sendeR_cheatsheet.png" width="100%">
-    </noembed>
-</embed>
+<embed src="figures/sendeR_cheatsheet.pdf#toolbar=0" width="100%" style="min-height:49vh;" />

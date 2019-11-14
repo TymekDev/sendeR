@@ -40,7 +40,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">sendeR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.2.9000</span>
       </span>
     </div>
 
@@ -116,7 +116,7 @@ devtools::<span class="kw">install_github</span>(<span class="st">"tmakowski/sen
 <li>Create a client for one of the supported services. For details on how to get access to the service’s API please refer to given client’s documentation.</li>
 <li>Use <code>send_message</code> method on the created client.</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"sendeR"</span>)
+<!-- end list --><div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"sendeR"</span>)
 my_telegram_client &lt;-<span class="st"> </span><span class="kw"><a href="reference/client_telegram.html">client_telegram</a></span>(&lt;my_bot_token&gt;)
 <span class="kw"><a href="reference/send_message.html">send_message</a></span>(my_telegram_client, <span class="st">"Hello world!"</span>, &lt;chat_id&gt;)</code></pre></div>
 <div id="important-remarks" class="section level4">
@@ -124,7 +124,7 @@ my_telegram_client &lt;-<span class="st"> </span><span class="kw"><a href="refer
 <a href="#important-remarks" class="anchor"></a>Important remarks</h4>
 <ul>
 <li>Creating <code>client_gmail</code> pauses code execution and waits for the OAuth2.0 authorization. This can be avoided in subsequent <code>client_gmail</code> calls if <code>httr</code> OAuth caching functionality is used.</li>
-<li>Currently (<code>v0.5.0</code>) passing an argument of wrong type to any function will result in a code stop due to failed assertion. Please test your sendeR calls before running long calculations.</li>
+<li>Currently passing an argument of wrong type to any function will result in a code stop due to failed assertion. Please test your sendeR calls before running long calculations.</li>
 </ul>
 </div>
 </div>

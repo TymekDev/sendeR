@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">sendeR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.2.9000</span>
       </span>
     </div>
 
@@ -109,7 +109,19 @@
 <div id="credentials-acquisition" class="section level3">
 <h3 class="hasAnchor">
 <a href="#credentials-acquisition" class="anchor"></a>Credentials acquisition</h3>
-<p>TODO(TK)</p>
+<p>First visit Google API web interface: <a href="https://console.developers.google.com/apis/credentials" class="uri">https://console.developers.google.com/apis/credentials</a></p>
+<p>Click Select a project, then NEW PROJECT, and enter a name for the project, and optionally, edit the provided project ID. Click Create.</p>
+<div class="figure">
+<img src="figures/gmail_fig01.png">
+</div>
+<p>On the Credentials page, select Create credentials, then OAuth client ID.</p>
+<div class="figure">
+<img src="figures/gmail_fig02.png">
+</div>
+<p>You may be prompted to set a product name on the Consent screen; if so, click Configure consent screen, supply the requested information, and click Save to return to the Credentials screen.</p>
+<p>Select Other for the Application type, and enter any additional information required.</p>
+<p>Click Create.</p>
+<p>On the page that appears, copy the client ID and client secret to your clipboard, as you will need them when you configure your client library.</p>
 </div>
 <div id="destination-argument-details" class="section level3">
 <h3 class="hasAnchor">
@@ -132,7 +144,19 @@
 <div id="credentials-acquisition-1" class="section level3">
 <h3 class="hasAnchor">
 <a href="#credentials-acquisition-1" class="anchor"></a>Credentials acquisition</h3>
-<p>TODO(TK)</p>
+<p>Create a Slack app here: <a href="https://api.slack.com/apps?new_app=1" class="uri">https://api.slack.com/apps?new_app=1</a></p>
+<div class="figure">
+<img src="figures/slack_fig01.png">
+</div>
+<p>Enable Incoming Webhooks from the settings page.</p>
+<div class="figure">
+<img src="figures/slack_fig02.png">
+</div>
+<p>After the settings page refreshes, click Add New Webhook to Workspace. Pick a channel that the app will post to, then click Authorize.</p>
+<div class="figure">
+<img src="figures/slack_fig03.png">
+</div>
+<p>Use your Incoming Webhook URL to post a message to Slack.</p>
 </div>
 <div id="destination-argument-details-1" class="section level3">
 <h3 class="hasAnchor">

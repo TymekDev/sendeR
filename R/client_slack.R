@@ -16,7 +16,7 @@
 #' @rdname client_slack
 #' @export
 client_slack <- function(slack_webhook) {
-    assert(is_character_len1(slack_webhook), msg_character_len1(slack_webhook))
+    assert(is_character_len1(slack_webhook), msg_character_len1("slack_webhook"))
 
     client <- client_sendeR("slack")
     client$slack_webhook <- slack_webhook

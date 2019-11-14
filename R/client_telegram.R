@@ -16,7 +16,7 @@
 #' @rdname client_telegram
 #' @export
 client_telegram <- function(telegram_token) {
-    assert(is_character_len1(telegram_token), msg_character_len1(telegram_token))
+    assert(is_character_len1(telegram_token), msg_character_len1("telegram_token"))
 
     client <- client_sendeR("telegram")
     client$telegram_token <- telegram_token

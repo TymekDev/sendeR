@@ -93,11 +93,11 @@ Once the chat is started BotFather will send a message with available commands. 
 
 ![](figures/telegram_fig02.png)
 
-Once the display name is provided we will be asked for bot's username, that is, the name which we can @tag the bot or search for it in the Telegram.
+Once the display name is provided we will be asked for bot username, that is, the name which we can @tag the bot or search for it in the Telegram.
 
 ![](figures/telegram_fig03.png)
 
-Once that is done BotFather will send the message with our bot's API token. This token is passed to the `client_telegram` function of `sendeR` package.
+Once that is done BotFather will send the message with our bot API token. This token is passed to the `client_telegram` function of `sendeR` package.
 
 
 ### Destination argument details

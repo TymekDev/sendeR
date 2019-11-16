@@ -1,6 +1,6 @@
 Package: sendeR
 Title: Simple Interface for Sending Messages
-Version: 0.8.0.9000
+Version: 0.8.1.9000
 Authors@R: c(
     person("Tymoteusz", "Makowski",
            email = "makowski.tymoteusz@gmail.com",
@@ -24,8 +24,10 @@ Suggests:
     openssl,
     rmarkdown,
     testthat (>= 2.1.0),
-    covr
+    covr,
+    spelling
 VignetteBuilder:
     knitr
 Encoding: UTF-8
+Language: en-US
 RoxygenNote: 6.1.1

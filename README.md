@@ -4,9 +4,8 @@ sendeR <img src="logo.png" align="right" width="120" />
 -------------------------------------------------------
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.com/tmakowski/sendeR.svg?branch=master)](https://travis-ci.com/tmakowski/sendeR) [![Codecov test coverage](https://codecov.io/gh/tmakowski/sendeR/branch/master/graph/badge.svg)](https://codecov.io/gh/tmakowski/sendeR?branch=master) [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Travis build status](https://travis-ci.com/tmakowski/sendeR.svg?branch=master)](https://travis-ci.com/tmakowski/sendeR) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/tmakowski/sendeR?branch=master&svg=true)](https://ci.appveyor.com/project/tmakowski/sendeR) [![Codecov test coverage](https://codecov.io/gh/tmakowski/sendeR/branch/master/graph/badge.svg)](https://codecov.io/gh/tmakowski/sendeR?branch=master) [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) <!-- badges: end -->
 
-<!-- badges: end -->
 ### Overview
 
 sendeR is a package whose premise is sending messages to various messaging and/or mailing services using a simple unified interface with as little dependencies as possible.

@@ -13,3 +13,4 @@
 ^docs$
 ^pkgdown$
 ^codecov\.yml$
+^appveyor\.yml$

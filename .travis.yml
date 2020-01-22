@@ -11,7 +11,8 @@ r:
 
 os:
   - linux
-  - osx
+  - osx:
+    - fortran: false
 
 matrix:
   fast_finish: true

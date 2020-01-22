@@ -78,7 +78,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">sendeR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.9.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.10.2.9000</span>
       </span>
     </div>
 
@@ -165,20 +165,20 @@ ultimately being the <code>FUN</code> functions' arguments.</p></td>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'> <span class='co'># Using regular client</span>
- <span class='no'>client</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='client_telegram.html'>client_telegram</a></span>(<span class='st'>"my_token"</span>)
- <span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-     <span class='no'>my_func</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span>(<span class='no'>x</span>, <span class='no'>text</span>) { <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span>(<span class='no'>text</span>, <span class='no'>x</span>)); <span class='fu'><a href='https://rdrr.io/r/base/Sys.sleep.html'>Sys.sleep</a></span>(<span class='no'>x</span>) }
-     <span class='fu'>sendeR_lapply</span>(<span class='no'>client</span>, <span class='fl'>1</span>:<span class='fl'>10</span>, <span class='no'>my_func</span>, <span class='st'>"Sleeping:"</span>, <span class='kw'>destination</span> <span class='kw'>=</span> <span class='fl'>12345</span>,
-                   <span class='kw'>message</span> <span class='kw'>=</span> <span class='st'>"sendeR_lapply done!"</span>)
- }
+    <pre class="examples"><div class='input'><span class='co'># Using regular client</span>
+<span class='no'>client</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='client_telegram.html'>client_telegram</a></span>(<span class='st'>"my_token"</span>)
+<span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+    <span class='no'>my_func</span> <span class='kw'>&lt;-</span> <span class='kw'>function</span>(<span class='no'>x</span>, <span class='no'>text</span>) { <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span>(<span class='no'>text</span>, <span class='no'>x</span>)); <span class='fu'><a href='https://rdrr.io/r/base/Sys.sleep.html'>Sys.sleep</a></span>(<span class='no'>x</span>) }
+    <span class='fu'>sendeR_lapply</span>(<span class='no'>client</span>, <span class='fl'>1</span>:<span class='fl'>10</span>, <span class='no'>my_func</span>, <span class='st'>"Sleeping:"</span>, <span class='kw'>destination</span> <span class='kw'>=</span> <span class='fl'>12345</span>,
+                  <span class='kw'>message</span> <span class='kw'>=</span> <span class='st'>"sendeR_lapply done!"</span>)
+}
 
- <span class='co'># Using client with set fields</span>
- <span class='no'>client_with_fields</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='set_fields.html'>set_fields</a></span>(<span class='no'>client</span>, <span class='kw'>message</span> <span class='kw'>=</span> <span class='st'>"sendeR_lapply is done!"</span>,
-                                  <span class='kw'>destination</span> <span class='kw'>=</span> <span class='fl'>12345</span>)
- <span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-     <span class='fu'>sendeR_lapply</span>(<span class='no'>client_with_fields</span>, <span class='fl'>1</span>:<span class='fl'>10</span>, <span class='no'>my_func</span>, <span class='st'>"Sys.sleep:"</span>)
- }</div></pre>
+<span class='co'># Using client with set fields</span>
+<span class='no'>client_with_fields</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='set_fields.html'>set_fields</a></span>(<span class='no'>client</span>, <span class='kw'>message</span> <span class='kw'>=</span> <span class='st'>"sendeR_lapply is done!"</span>,
+                                 <span class='kw'>destination</span> <span class='kw'>=</span> <span class='fl'>12345</span>)
+<span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+    <span class='fu'>sendeR_lapply</span>(<span class='no'>client_with_fields</span>, <span class='fl'>1</span>:<span class='fl'>10</span>, <span class='no'>my_func</span>, <span class='st'>"Sys.sleep:"</span>)
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

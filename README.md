@@ -55,7 +55,8 @@ send_message(client, message = "Hello world!")
 
 #### Additional Features
 
--   Version `0.9.0.9000` of the package comes with the `sendeR_lapply` function which can easily be used to send notifications after a calculation is finished. Please refer to the documentation for usage specifics.
+-   Version `0.10.0.9000` of the package has the `sendeR_txtProgressBar` function which shares the behaviour of regular `txtProgressBar` with addition of sending a message when calculation is finished. Please refer to the documentation for usage details.
+-   Version `0.9.0.9000` of the package comes with the `sendeR_lapply` function which can easily be used to send notifications after a calculation is finished. Please refer to the documentation for usage details.
 
 #### Important Remarks
 

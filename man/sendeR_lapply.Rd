@@ -27,19 +27,19 @@ Function is a wrapper for standard \code{\link{lapply}}. The
  the user that \code{lapply} has finished.
 }
 \examples{
- # Using regular client
- client <- client_telegram("my_token")
- \dontrun{
-     my_func <- function(x, text) { print(paste(text, x)); Sys.sleep(x) }
-     sendeR_lapply(client, 1:10, my_func, "Sleeping:", destination = 12345,
-                   message = "sendeR_lapply done!")
- }
- 
- # Using client with set fields
- client_with_fields <- set_fields(client, message = "sendeR_lapply is done!",
-                                  destination = 12345)
- \dontrun{
-     sendeR_lapply(client_with_fields, 1:10, my_func, "Sys.sleep:")
- }
+# Using regular client
+client <- client_telegram("my_token")
+\dontrun{
+    my_func <- function(x, text) { print(paste(text, x)); Sys.sleep(x) }
+    sendeR_lapply(client, 1:10, my_func, "Sleeping:", destination = 12345,
+                  message = "sendeR_lapply done!")
+}
+
+# Using client with set fields
+client_with_fields <- set_fields(client, message = "sendeR_lapply is done!",
+                                 destination = 12345)
+\dontrun{
+    sendeR_lapply(client_with_fields, 1:10, my_func, "Sys.sleep:")
+}
 
 }

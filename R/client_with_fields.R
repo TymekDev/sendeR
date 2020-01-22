@@ -24,12 +24,12 @@
 #'  be ignored).
 #' 
 #' @examples 
-#'  client <- client_telegram("my_token")
-#'  client <- set_fields(client, message = "Hello world!", destination = 12345)
-#'  
-#'  \dontrun{
-#'      send_message(client)
-#'  }
+#' client <- client_telegram("my_token")
+#' client <- set_fields(client, message = "Hello world!", destination = 12345)
+#' 
+#' \dontrun{
+#'     send_message(client)
+#' }
 #' 
 #' @export
 set_fields <- function(client, ...) {

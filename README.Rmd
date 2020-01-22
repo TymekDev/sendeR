@@ -47,6 +47,21 @@ my_telegram_client <- client_telegram(<my_bot_token>)
 send_message(my_telegram_client, "Hello world!", <chat_id>)
 ```
 
+As of version `0.9.0.9000` it is possible to set *default* parameters in the clients as shown below.
+```{r, eval = FALSE}
+client <- client_telegram(<my_bot_token>)
+client <- set_fields(client, destination = <chat_id>, message = "Hi world!")
+
+# This will send "Hi world!" message to chat under <chat_id>.
+send_message(client)
+
+# This will send "Hello world!" message to chat under <chat_id>.
+send_message(client, message = "Hello world!")
+```
+
+#### Additional Features
+* Version `0.9.0.9000` of the package comes with the `sendeR_lapply` function which can easily be used to send notifications after a calculation is finished. Please refer to the documentation for usage specifics.
+
 #### Important Remarks
  - Creating `client_gmail` pauses code execution and waits for the OAuth2.0 authorization. This can be avoided in subsequent `client_gmail` calls if `httr` OAuth caching functionality is used.
  - Currently passing an argument of wrong type to any function will result in a code stop due to failed assertion. Please test your sendeR calls before running long calculations.

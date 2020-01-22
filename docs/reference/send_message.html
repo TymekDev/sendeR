@@ -76,7 +76,7 @@ only serves as a placeholder." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">sendeR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.8.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.9.0.9000</span>
       </span>
     </div>
 
@@ -120,7 +120,7 @@ only serves as a placeholder." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Methods for sending messages.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/tmakowski/sendeR/blob/master/R/client_gmail.R'><code>R/client_gmail.R</code></a>, <a href='https://github.com/tmakowski/sendeR/blob/master/R/client_sendeR.R'><code>R/client_sendeR.R</code></a>, <a href='https://github.com/tmakowski/sendeR/blob/master/R/client_slack.R'><code>R/client_slack.R</code></a>, and 3 more</small>
+    <small class="dont-index">Source: <a href='https://github.com/tmakowski/sendeR/blob/master/R/client_gmail.R'><code>R/client_gmail.R</code></a>, <a href='https://github.com/tmakowski/sendeR/blob/master/R/client_sendeR.R'><code>R/client_sendeR.R</code></a>, <a href='https://github.com/tmakowski/sendeR/blob/master/R/client_slack.R'><code>R/client_slack.R</code></a>, and 4 more</small>
     <div class="hidden name"><code>send_message.Rd</code></div>
     </div>
 
@@ -132,20 +132,26 @@ only serves as a placeholder.</p>
     </div>
 
     <pre class="usage"><span class='co'># S3 method for client_gmail</span>
-<span class='fu'>send_message</span>(<span class='no'>client</span>, <span class='no'>message</span>, <span class='no'>destination</span>,
-  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>subject</span> <span class='kw'>=</span> <span class='st'>"sendeR message"</span>, <span class='no'>...</span>)
+<span class='fu'>send_message</span>(
+  <span class='no'>client</span>,
+  <span class='no'>message</span>,
+  <span class='no'>destination</span>,
+  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>subject</span> <span class='kw'>=</span> <span class='st'>"sendeR message"</span>,
+  <span class='no'>...</span>
+)
 
 <span class='co'># S3 method for client_sendeR</span>
-<span class='fu'>send_message</span>(<span class='no'>client</span>, <span class='no'>message</span>, <span class='no'>destination</span>,
-  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
+<span class='fu'>send_message</span>(<span class='no'>client</span>, <span class='no'>message</span>, <span class='no'>destination</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
 
 <span class='co'># S3 method for client_slack</span>
-<span class='fu'>send_message</span>(<span class='no'>client</span>, <span class='no'>message</span>, <span class='kw'>destination</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
+<span class='fu'>send_message</span>(<span class='no'>client</span>, <span class='no'>message</span>, <span class='kw'>destination</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
 
 <span class='co'># S3 method for client_telegram</span>
-<span class='fu'>send_message</span>(<span class='no'>client</span>, <span class='no'>message</span>, <span class='no'>destination</span>,
-  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
+<span class='fu'>send_message</span>(<span class='no'>client</span>, <span class='no'>message</span>, <span class='no'>destination</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for client_with_fields</span>
+<span class='fu'>send_message</span>(<span class='no'>client</span>, <span class='no'>message</span>, <span class='no'>destination</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
 
 <span class='fu'>send_message</span>(<span class='no'>client</span>, <span class='no'>message</span>, <span class='no'>destination</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
     
@@ -184,6 +190,11 @@ method overloading purposes.</p></td>
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p><strong>Note:</strong> arguments to <code>send_message</code> function are
+ always prioritized over the client fields.</p>
+    
     <h2 class="hasAnchor" id="methods-by-class-"><a class="anchor" href="#methods-by-class-"></a>Methods (by class)</h2>
 
     
@@ -201,6 +212,8 @@ webhook is tied to a single channel.</p></li>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       
+      <li><a href="#details">Details</a></li>
+
       <li><a href="#methods-by-class-">Methods (by class)</a></li>
           </ul>
 

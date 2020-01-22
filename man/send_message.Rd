@@ -9,17 +9,20 @@
 \alias{send_message}
 \title{Methods for sending messages.}
 \usage{
-\method{send_message}{client_gmail}(client, message, destination,
-  verbose = FALSE, subject = "sendeR message", ...)
+\method{send_message}{client_gmail}(
+  client,
+  message,
+  destination,
+  verbose = FALSE,
+  subject = "sendeR message",
+  ...
+)
 
-\method{send_message}{client_sendeR}(client, message, destination,
-  verbose = FALSE, ...)
+\method{send_message}{client_sendeR}(client, message, destination, verbose = FALSE, ...)
 
-\method{send_message}{client_slack}(client, message, destination = NULL,
-  verbose = FALSE, ...)
+\method{send_message}{client_slack}(client, message, destination = NULL, verbose = FALSE, ...)
 
-\method{send_message}{client_telegram}(client, message, destination,
-  verbose = FALSE, ...)
+\method{send_message}{client_telegram}(client, message, destination, verbose = FALSE, ...)
 
 send_message(client, message, destination, verbose = FALSE, ...)
 }

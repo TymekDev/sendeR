@@ -17,9 +17,11 @@
 #' @export
 send_message <- function(client, message, destination, verbose = FALSE, ...) {
     assert(is.client_sendeR(client), not_a_client("client", "sendeR"))
-    assert(is_character_len1(message), msg_character_len1("message"))
-    assert(is_logical_not_NA(verbose), msg_logical_not_NA("verbose"))
-    
+    if (!has_fields(client)) {
+        assert(is_character_len1(message), msg_character_len1("message"))
+        assert(is_logical_not_NA(verbose), msg_logical_not_NA("verbose"))
+    }
+        
     if (has_internet()) {
         UseMethod("send_message")
     } else {

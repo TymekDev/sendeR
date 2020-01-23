@@ -1,6 +1,6 @@
 Package: sendeR
 Title: Simple Interface for Sending Messages
-Version: 0.10.2.9000
+Version: 0.10.3.9000
 Authors@R: c(
     person("Tymoteusz", "Makowski",
            email = "makowski.tymoteusz@gmail.com",

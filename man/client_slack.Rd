@@ -4,10 +4,13 @@
 \alias{client_slack}
 \title{Slack client}
 \usage{
-client_slack(slack_webhook)
+client_slack(slack_webhook, ...)
 }
 \arguments{
 \item{slack_webhook}{a webhook obtained from the Slack API settings.}
+
+\item{...}{named arguments with additional fields which will be passed to
+\code{\link{set_fields}} during client creation.}
 }
 \description{
 Client extending the \code{\link{client_sendeR}} for the Slack
@@ -19,6 +22,13 @@ Webhook API. For additional information on how to create a webhook see details.
 To create your own webhook head to
 \url{https://api.slack.com/messaging/webhooks}.
 \strong{Note}: Webhooks are permanently connected to one channel.
+}
+\examples{
+client <- client_slack("my_webhook")
+
+# Variant with default parameters set
+client2 <- client_slack("my_webhook", message = "Default message template")
+
 }
 \seealso{
 \code{\link{is.client_slack}}, \code{\link{send_message}}

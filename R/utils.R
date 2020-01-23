@@ -1,11 +1,14 @@
 # Function adds a new class to a given object.
-add_class <- function(object, new_class, as_first = TRUE) {
-    if (as_first) {
-        classes_new <- c(new_class, class(object))
-    } else {
-        classes_new <- c(class(object), new_class)
-    }
+add_class <- function(object, new_class, as_second = TRUE) {
     
+    classes_old <- class(object)
+    
+    if (as_second) {
+        classes_new <- c(classes_old[1], new_class, classes_old[-1])
+    } else {
+        classes_new <- c(new_class, classes_old)   
+    }
+        
     class(object) <- classes_new
     object
 }

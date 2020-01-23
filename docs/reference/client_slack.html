@@ -78,7 +78,7 @@ Webhook API. For additional information on how to create a webhook see details."
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">sendeR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.10.2.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.10.3.9000</span>
       </span>
     </div>
 
@@ -135,7 +135,7 @@ Webhook API. For additional information on how to create a webhook see details.<
     
     </div>
 
-    <pre class="usage"><span class='fu'>client_slack</span>(<span class='no'>slack_webhook</span>)</pre>
+    <pre class="usage"><span class='fu'>client_slack</span>(<span class='no'>slack_webhook</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -143,6 +143,11 @@ Webhook API. For additional information on how to create a webhook see details.<
     <tr>
       <th>slack_webhook</th>
       <td><p>a webhook obtained from the Slack API settings.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>named arguments with additional fields which will be passed to
+<code><a href='set_fields.html'>set_fields</a></code> during client creation.</p></td>
     </tr>
     </table>
     
@@ -157,6 +162,11 @@ Webhook API. For additional information on how to create a webhook see details.<
     <div class='dont-index'><p><code><a href='is.client_sendeR.html'>is.client_slack</a></code>, <code><a href='send_message.html'>send_message</a></code></p></div>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='no'>client</span> <span class='kw'>&lt;-</span> <span class='fu'>client_slack</span>(<span class='st'>"my_webhook"</span>)
+
+<span class='co'># Variant with default parameters set</span>
+<span class='no'>client2</span> <span class='kw'>&lt;-</span> <span class='fu'>client_slack</span>(<span class='st'>"my_webhook"</span>, <span class='kw'>message</span> <span class='kw'>=</span> <span class='st'>"Default message template"</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -166,7 +176,9 @@ Webhook API. For additional information on how to create a webhook see details.<
       <li><a href="#details">Details</a></li>
 
       <li><a href="#see-also">See also</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

@@ -42,7 +42,7 @@ set_fields <- function(client, ...) {
         }
     }
     
-    add_class(client, fields_class_name())
+    add_class(client, fields_class_name(), FALSE)
 }
 
 #' @details \strong{Note:} arguments to \code{\link{send_message}} function are

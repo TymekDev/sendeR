@@ -4,7 +4,7 @@
 \alias{client_gmail}
 \title{Gmail client}
 \usage{
-client_gmail(email, key, secret)
+client_gmail(email, key, secret, ...)
 }
 \arguments{
 \item{email}{an email of a sender of the message.}
@@ -12,6 +12,9 @@ client_gmail(email, key, secret)
 \item{key}{a key created in a Google API application.}
 
 \item{secret}{a secret key created in a Google API application.}
+
+\item{...}{named arguments with additional fields which will be passed to
+\code{\link{set_fields}} during client creation.}
 }
 \description{
 Client extending the \code{\link{client_sendeR}} for the Gmail
@@ -22,6 +25,17 @@ on how to get required credentials see details.
 }
 \details{
 To get Google credentials just follow the tutorial \url{https://developers.google.com/adwords/api/docs/guides/authentication}
+}
+\examples{
+\dontrun{
+client <- client_gmail("my_email", "my_key", "my_secret")
+
+# Variant with default parameters set
+client2 <- client_gmail("my_email", "my_key", "my_secret",
+                        message = "Default email template",
+                        destination = "my_email")
+}
+
 }
 \seealso{
 \code{\link{is.client_gmail}}, \code{\link{send_message}}

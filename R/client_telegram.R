@@ -10,15 +10,23 @@
 #' \url{https://core.telegram.org/bots#6-botfather}.
 #' 
 #' @param telegram_token a bot token given by the BotFather.
+#' @param ... named arguments with additional fields which will be passed to
+#'  \code{\link{set_fields}} during client creation.
 #' 
 #' @seealso \code{\link{is.client_telegram}}, \code{\link{send_message}}
 #' 
+#' @examples 
+#' client <- client_telegram("my_token")
+#' 
+#' # Variant with default parameters set
+#' client2 <- client_telegram("my_token", message = "Default message template")
+#' 
 #' @rdname client_telegram
 #' @export
-client_telegram <- function(telegram_token) {
+client_telegram <- function(telegram_token, ...) {
     assert(is_character_len1(telegram_token), msg_character_len1("telegram_token"))
 
-    client <- client_sendeR("telegram")
+    client <- client_sendeR("telegram", ...)
     client$telegram_token <- telegram_token
 
     add_class(client, "client_telegram")

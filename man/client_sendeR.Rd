@@ -5,21 +5,28 @@
 \alias{print.client_sendeR}
 \title{sendeR client}
 \usage{
-client_sendeR(service)
+client_sendeR(service, ...)
 
 \method{print}{client_sendeR}(x, ...)
 }
 \arguments{
 \item{service}{typically a name of service whose client extends the object.}
 
-\item{x}{an object to print.}
-
 \item{...}{argument not used. Required only for overloading purposes.}
+
+\item{x}{an object to print.}
 }
 \description{
 Function \code{client_sendeR} is a constructor for an object
 of a \code{client_sendeR} class. This object is an underlying structure
 on which every other client is based.
+}
+\examples{
+client <- client_sendeR("a service name")
+
+# Variant with default parameters set
+client2 <- client_sendeR("service", message = "Default message template")
+
 }
 \seealso{
 \code{\link{is.client_sendeR}}, \code{\link{send_message}}

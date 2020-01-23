@@ -5,16 +5,30 @@
 #' on which every other client is based.
 #' 
 #' @param service typically a name of service whose client extends the object.
+#' @param ... named arguments with additional fields which will be passed to
+#'  \code{\link{set_fields}} during client creation.
 #' 
 #' @seealso \code{\link{is.client_sendeR}}, \code{\link{send_message}}
+#'
+#' @examples 
+#' client <- client_sendeR("a service name")
 #' 
+#' # Variant with default parameters set
+#' client2 <- client_sendeR("service", message = "Default message template")
+#'
 #' @rdname client_sendeR
 #' @export
-client_sendeR <- function(service) {
+client_sendeR <- function(service, ...) {
     assert(is_character_len1(service), msg_character_len1("service"))
     
     client <- list("service" = service)
-    add_class(client, "client_sendeR")
+    client <- add_class(client, "client_sendeR", FALSE)
+    
+    if (length(list(...)) > 0 ) {
+        client <- set_fields(client, ...)
+    }
+    
+    client
 }
 
 

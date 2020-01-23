@@ -10,15 +10,23 @@
 #' \strong{Note}: Webhooks are permanently connected to one channel.
 #' 
 #' @param slack_webhook a webhook obtained from the Slack API settings.
+#' @param ... named arguments with additional fields which will be passed to
+#'  \code{\link{set_fields}} during client creation.
 #' 
 #' @seealso \code{\link{is.client_slack}}, \code{\link{send_message}}
+#'
+#' @examples 
+#' client <- client_slack("my_webhook")
+#' 
+#' # Variant with default parameters set
+#' client2 <- client_slack("my_webhook", message = "Default message template")
 #' 
 #' @rdname client_slack
 #' @export
-client_slack <- function(slack_webhook) {
+client_slack <- function(slack_webhook, ...) {
     assert(is_character_len1(slack_webhook), msg_character_len1("slack_webhook"))
 
-    client <- client_sendeR("slack")
+    client <- client_sendeR("slack", ...)
     client$slack_webhook <- slack_webhook
   
     add_class(client, "client_slack")

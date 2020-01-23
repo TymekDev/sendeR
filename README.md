@@ -40,7 +40,7 @@ my_telegram_client <- client_telegram(<my_bot_token>)
 send_message(my_telegram_client, "Hello world!", <chat_id>)
 ```
 
-As of version `0.9.0.9000` it is possible to set *default* parameters in the clients as shown below.
+As of version `0.9.0.9000` it is possible to set *default* parameters in the clients as shown below. As of version `0.10.3.9000` it is possible to pass `set_fields` arguments directly into client constructor, e.g. `client_telegram(<my_bot_token>, message = "Hi world!")`.
 
 ``` r
 client <- client_telegram(<my_bot_token>)

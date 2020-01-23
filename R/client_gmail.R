@@ -11,12 +11,24 @@
 #' @param email an email of a sender of the message.
 #' @param key a key created in a Google API application.
 #' @param secret a secret key created in a Google API application.
+#' @param ... named arguments with additional fields which will be passed to
+#'  \code{\link{set_fields}} during client creation.
 #'
 #' @seealso \code{\link{is.client_gmail}}, \code{\link{send_message}}
+#' 
+#' @examples 
+#' \dontrun{
+#' client <- client_gmail("my_email", "my_key", "my_secret")
+#' 
+#' # Variant with default parameters set
+#' client2 <- client_gmail("my_email", "my_key", "my_secret",
+#'                         message = "Default email template",
+#'                         destination = "my_email")
+#' }
 #'
 #' @rdname client_gmail
 #' @export
-client_gmail <- function(email, key, secret) {
+client_gmail <- function(email, key, secret, ...) {
     assert(package_installed("httr"),
            "httr package is required for OAuth authorization in client_gmail")
     assert(is_character_len1(email), msg_character_len1("email"))
@@ -29,7 +41,7 @@ client_gmail <- function(email, key, secret) {
         httr::oauth_endpoints("google"), gmail_send_app,
         scope = "https://www.googleapis.com/auth/gmail.send")
     
-    client <- client_sendeR("gmail")
+    client <- client_sendeR("gmail", ...)
     client$email <- email
     client$key <- key
     client$secret <- secret

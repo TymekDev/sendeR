@@ -4,10 +4,13 @@
 \alias{client_telegram}
 \title{Telegram client}
 \usage{
-client_telegram(telegram_token)
+client_telegram(telegram_token, ...)
 }
 \arguments{
 \item{telegram_token}{a bot token given by the BotFather.}
+
+\item{...}{named arguments with additional fields which will be passed to
+\code{\link{set_fields}} during client creation.}
 }
 \description{
 Client extending a \code{\link{client_sendeR}} for the Telegram
@@ -19,6 +22,13 @@ the Telegram Bot API. For additional information on how to get required
 \details{
 To create your own telegram bot refer to
 \url{https://core.telegram.org/bots#6-botfather}.
+}
+\examples{
+client <- client_telegram("my_token")
+
+# Variant with default parameters set
+client2 <- client_telegram("my_token", message = "Default message template")
+
 }
 \seealso{
 \code{\link{is.client_telegram}}, \code{\link{send_message}}

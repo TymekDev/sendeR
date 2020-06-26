@@ -5,9 +5,6 @@ r_check_args: --as-cran
 r:
   - release
   - devel
-  - 3.4
-  - 3.3
-  - 3.2
 
 os:
   - linux
